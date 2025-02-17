@@ -5,7 +5,6 @@ import java.sql.*;
 public class Singleton {
 
     private static Connection conexion;
-    
     private static Singleton instancia;
     
     private Singleton() {
@@ -16,7 +15,7 @@ public class Singleton {
     private static final String USUARIO = "root";
     private static final String CONTRASEÑA = "Jbelmgzic#009";
     
-    public static Connection conexionBD() {
+    public Connection conexionBD() {
     	 if (conexion == null) {
              try {
                  conexion = DriverManager.getConnection(URL, USUARIO, CONTRASEÑA);
