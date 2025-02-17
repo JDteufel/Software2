@@ -1,7 +1,7 @@
 create database if not exists Software2;
 use Software2;
 
-create table if not exists Cliente(
+create table if not exists Clientes(
 ID integer unique primary key,
 nombre varchar(25) not null
 )engine=innoDB;
