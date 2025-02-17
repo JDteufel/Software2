@@ -3,12 +3,12 @@ use ejemplo1BD;
 
 create table if not exists Clientes(
 ID integer unique primary key,
-nombre varchar(25) not null
+nombre varchar(50) not null
 )engine=innoDB;
 insert into Clientes values
 (1076736852,'Juan David Gómez Cárdenas'),	
 (1278432116,'Carlos Manuel Rodríguez Garnica'),
-(1875432460,'María','Lucia','Torres','Pedraza');
+(1875432460,'María Lucia Torres Pedraza');
 select * from Cliente;
 /*
 create table if not exists Empresa(
