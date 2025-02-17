@@ -1,11 +1,11 @@
-create database if not exists Software2;
-use Software2;
+create database if not exists ejemplo1BD;
+use ejemplo1BD;
 
 create table if not exists Clientes(
 ID integer unique primary key,
 nombre varchar(25) not null
 )engine=innoDB;
-insert into Cliente values
+insert into Clientes values
 (1076736852,'Juan David Gómez Cárdenas'),	
 (1278432116,'Carlos Manuel Rodríguez Garnica'),
 (1875432460,'María','Lucia','Torres','Pedraza');
