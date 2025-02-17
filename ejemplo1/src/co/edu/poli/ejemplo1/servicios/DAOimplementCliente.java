@@ -11,7 +11,7 @@ public class DAOimplementCliente implements DAOcliente{
     
     @Override
     public void createCliente(Cliente cliente) {
-    	String query = "INSERT INTO clientes (idCliente, nombre) VALUES (?, ?)";
+    	String query = "INSERT INTO Clientes (idCliente, nombre) VALUES (?, ?)";
         try (Connection conn = Singleton.conexionBD();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
@@ -27,7 +27,7 @@ public class DAOimplementCliente implements DAOcliente{
     
     @Override
     public Cliente readCliente(String idCliente) {
-    	String query = "SELECT * FROM clientes WHERE idCliente = ?";
+    	String query = "SELECT * FROM Clientes WHERE idCliente = ?";
         try (Connection conn = Singleton.conexionBD();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
@@ -46,7 +46,7 @@ public class DAOimplementCliente implements DAOcliente{
     @Override
     public List<Cliente> readAllCliente(){
     	List<Cliente> clientes = new ArrayList<>();
-        String query = "SELECT * FROM clientes";
+        String query = "SELECT * FROM Clientes";
         try (Connection conn = Singleton.conexionBD();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
@@ -64,7 +64,7 @@ public class DAOimplementCliente implements DAOcliente{
     
     @Override
     public void updateCliente(Cliente cliente) {
-    	String query = "UPDATE clientes SET nombre = ? WHERE idCliente = ?";
+    	String query = "UPDATE Clientes SET nombre = ? WHERE idCliente = ?";
         try (Connection conn = Singleton.conexionBD();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
@@ -80,7 +80,7 @@ public class DAOimplementCliente implements DAOcliente{
     
     @Override
     public void deleteCliente(String idCliente) {
-    	String query = "DELETE FROM clientes WHERE idCliente = ?";
+    	String query = "DELETE FROM Clientes WHERE idCliente = ?";
         try (Connection conn = Singleton.conexionBD();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
