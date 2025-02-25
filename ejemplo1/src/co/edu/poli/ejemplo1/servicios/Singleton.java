@@ -15,18 +15,32 @@ public class Singleton {
 	private static final String USUARIO = "root";
 	private static final String CONTRASEÑA = "Jbelmgzic#009";
 
-	public static Connection conexionBD() {
-		if (conexion == null || !conexionActiva()) {
-			try {
-				conexion = DriverManager.getConnection(URL, USUARIO, CONTRASEÑA);
-				System.out.println("Conexión exitosa.");
-			} catch (SQLException e) {
-				e.printStackTrace();
-				System.out.println("Error al conectar a la base de datos.");
-			}
-		}
-		return conexion;
-	}
+	static {
+        ResourceBundle config = ResourceBundle.getBundle("config");
+        URL = config.getString("URL");
+        USUARIO = config.getString("USUARIO");
+        CONTRA = config.getString("CONTRA");
+    }
+/*
+    static {
+        Properties infoDB = new Properties();
+        String urlT = null;
+        String usuarioT = null;
+        String contraT = null;
+
+        try {
+            infoDB.load(new FileInputStream("config.properties"));
+            urlT = infoDB.getProperty("URL");
+            usuarioT = infoDB.getProperty("USUARIO");
+            contraT = infoDB.getProperty("CONTRA");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        URL = urlT;
+        USUARIO = usuarioT;
+        CONTRA = contraT;	
+    }
+ */
 
 	public static void cerrarConexion() {
 		if (conexion != null) {
