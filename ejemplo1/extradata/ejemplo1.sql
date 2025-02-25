@@ -1,16 +1,31 @@
-create database if not exists ejemplo1BD;
-use ejemplo1BD;
-
+create database if not exists ejemplo1DB;
+use ejemplo1DB;
 create table if not exists Clientes(
-ID integer unique primary key,
+idCliente varchar(10) unique primary key,
 nombre varchar(50) not null
 )engine=innoDB;
-insert into Clientes values
+
+create table if not exists Productos(
+idProducto int unique primary key,
+descripcion varchar(100)
+)engine=innoDB;
+
+create table if not exists ProdAlimenticios(
+foreign key (idProducto) references Productos,
+aporteCalorico varchar(10) not null
+)engine=innoDB;
+
+create table if not exists ProdElectricos(
+foreign key (idProducto) references Productos,
+voltajeEntrada varchar(10) not null
+)engine=innoDB;
+/*
+insert into Cliente values
 (1076736852,'Juan David Gómez Cárdenas'),	
 (1278432116,'Carlos Manuel Rodríguez Garnica'),
 (1875432460,'María Lucia Torres Pedraza');
 select * from Cliente;
-/*
+
 create table if not exists Empresa(
 CodSede integer unique primary key,
 NomEmpresa varchar(40) not null,
