@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.*;
 import co.edu.poli.ejemplo1.modelo.Producto;
 
-public class DAOimplementProducto implements DAOproducto {
+public class DAOimplementProducto implements DAO <Producto, int> {
 
 	public DAOimplementProducto() {
 	}
