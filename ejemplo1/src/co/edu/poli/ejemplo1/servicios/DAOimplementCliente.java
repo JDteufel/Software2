@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.*;
 import co.edu.poli.ejemplo1.modelo.Cliente;
 
-public class DAOimplementCliente implements DAOcliente {
+public class DAOimplementCliente implements DAO <Cliente , String>{
 
 	public DAOimplementCliente() {
 	}
