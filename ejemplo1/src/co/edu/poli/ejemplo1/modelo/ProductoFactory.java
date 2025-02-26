@@ -1,4 +1,4 @@
-package co.edu.poli.ejemplo1.modelo.Producto;
+package co.edu.poli.ejemplo1.modelo;
 
 public abstract class ProductoFactory {
     
