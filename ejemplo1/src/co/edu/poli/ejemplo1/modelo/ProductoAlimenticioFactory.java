@@ -1,6 +1,6 @@
 package co.edu.poli.ejemplo1.modelo; 
 
-public class ProductoAlimenticioFactory extends ProductoFactory {
+public class ProductoAlimenticioFactory implements ProductoFactory {
 
     private String fechaExpiracion;
 
