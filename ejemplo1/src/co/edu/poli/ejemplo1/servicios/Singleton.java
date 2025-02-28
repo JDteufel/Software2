@@ -11,9 +11,9 @@ public class Singleton {
 	private Singleton() {
 	}
 
-	private static final String URL = "jdbc:mysql://localhost:3306/ejemplo1DB";
-	private static final String USUARIO = "root";
-	private static final String CONTRASEÑA = "Jbelmgzic#009";
+	private static final String URL;
+	private static final String USUARIO;
+	private static final String CONTRA;
 
 	static {
         ResourceBundle config = ResourceBundle.getBundle("config");
@@ -42,7 +42,7 @@ public class Singleton {
     }
  */
 
-	public static void cerrarConexion() {
+	public static cerrarConexion() {
 		if (conexion != null) {
 			try {
 				conexion.close();
@@ -52,6 +52,7 @@ public class Singleton {
 				e.printStackTrace();
 			}
 		}
+		return conexion;
 	}
 
 	public static Singleton getInstance() {
