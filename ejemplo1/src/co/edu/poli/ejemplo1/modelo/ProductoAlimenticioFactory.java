@@ -11,7 +11,6 @@ public class ProductoAlimenticioFactory implements ProductoFactory {
     @Override
     public Producto crearProducto(String idProducto, String descripcion) {
         Producto p = new ProductoAlimenticio(idProducto, descripcion, fechaExpiracion);
-        registrarProducto(p); // Usa el método de la clase abstracta
         return p;
     }
 }
