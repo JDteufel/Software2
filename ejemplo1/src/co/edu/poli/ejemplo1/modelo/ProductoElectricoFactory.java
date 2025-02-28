@@ -1,6 +1,6 @@
 package co.edu.poli.ejemplo1.modelo;
 
-public class ProductoElectricoFactory extends ProductoFactory {
+public class ProductoElectricoFactory implements ProductoFactory {
 
     private int voltaje;
 
