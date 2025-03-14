@@ -1,18 +1,18 @@
 package co.edu.poli.ejemplo1.modelo;
 
 public class ProductoElectrico extends Producto {
-	private int voltajeEntrada;
+	private String voltajeEntrada;
 
-	public ProductoElectrico(String idProducto, String tipo, String descripcion, int voltajeEntrada) {
+	public ProductoElectrico(String idProducto, String tipo, String descripcion, String voltajeEntrada) {
 		super(idProducto, tipo, descripcion);
 		this.voltajeEntrada = voltajeEntrada;
 	}
 
-	public int getVoltajeEntrada() {
+	public String getVoltajeEntrada() {
 		return voltajeEntrada;
 	}
 
-	public void setVoltajeEntrada(int voltajeEntrada) {
+	public void setVoltajeEntrada(String voltajeEntrada) {
 		this.voltajeEntrada = voltajeEntrada;
 	}
 
@@ -21,3 +21,4 @@ public class ProductoElectrico extends Producto {
         return super.toString();
     }
 }
+
