@@ -58,7 +58,7 @@ public class DAOimplementProducto implements ConsultaEsp<Producto , String>{
                         stmtElec.setString(1, idProducto);
                         ResultSet rsElec = stmtElec.executeQuery();
                         if (rsElec.next()) {
-                            int voltajeEntrada = rsElec.getInt("voltajeEntrada");
+                            String voltajeEntrada = rsElec.getString("voltajeEntrada");
                             return new ProductoElectrico(idProducto, tipo, descripcion, voltajeEntrada);
                         }
                     }
@@ -97,7 +97,7 @@ public class DAOimplementProducto implements ConsultaEsp<Producto , String>{
                         stmtElec.setString(1, id);
                         ResultSet rsElec = stmtElec.executeQuery();
                         if (rsElec.next()) {
-                            int voltajeEntrada = rsElec.getInt("voltajeEntrada");
+                            String voltajeEntrada = rsElec.getString("voltajeEntrada");
                             productos.add(new ProductoElectrico(id, tipo, descripcion, voltajeEntrada));
                         }
                     }
@@ -130,7 +130,7 @@ public class DAOimplementProducto implements ConsultaEsp<Producto , String>{
 			if (producto instanceof ProductoElectrico) {
                 String sqlElec = "UPDATE Electricos SET voltaje = ? WHERE id_producto = ?";
                 try (PreparedStatement stmtElec = conn.prepareStatement(sqlElec)) {
-                    stmtElec.setInt(1, ((ProductoElectrico) producto).getVoltajeEntrada());
+                    stmtElec.setString(1, ((ProductoElectrico) producto).getVoltajeEntrada());
                     stmtElec.setString(2, producto.getIdProducto());
                     stmtElec.executeUpdate();
                 }
