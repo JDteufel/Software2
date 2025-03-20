@@ -95,11 +95,15 @@ public class ControladorCliente {
     
     @FXML
     private void abrirProducto() {
+        System.out.println("Intentando abrir la vista de productos...");
         try {
             App.cambiarVista("FormularioProducto");
-        } catch (IOException e) {
+            System.out.println("Vista de productos abierta correctamente.");
+        } catch (Exception e) {  // Cambiar IOException por Exception
             e.printStackTrace();
             mostrarAlerta("Error", "No se pudo abrir el formulario de Producto.");
         }
     }
+
+
 }

@@ -7,9 +7,11 @@ import co.edu.poli.ejemplo1.servicios.DAOimplementProducto;
 import co.edu.poli.ejemplo1.vista.App;
 
 import java.io.IOException;
+
+import co.edu.poli.ejemplo1.modelo.Director;
 import co.edu.poli.ejemplo1.modelo.Producto;
-import co.edu.poli.ejemplo1.modelo.ProductoAlimenticio;
-import co.edu.poli.ejemplo1.modelo.ProductoElectrico;
+import co.edu.poli.ejemplo1.modelo.ProductoAlimenticioBuilder;
+import co.edu.poli.ejemplo1.modelo.ProductoElectricoBuilder;
 
 public class ControladorProducto {
 
@@ -26,9 +28,11 @@ public class ControladorProducto {
     private TextField txtId_CP, txtNmbr_CP, txtCal, txtVolt;
 
     private ConsultaEsp<Producto, String> consulta;
+    private Director director;
 
     public ControladorProducto() {
         this.consulta = new DAOimplementProducto();
+        this.director = new Director();
     }
 
     @FXML
@@ -36,13 +40,19 @@ public class ControladorProducto {
         txtCal.setDisable(true);
         txtVolt.setDisable(true);
 
+        // Agrupamos los RadioButton en un ToggleGroup para que solo uno esté activo a la vez
+        ToggleGroup toggleGroup = new ToggleGroup();
+        selAlim.setToggleGroup(toggleGroup);
+        selElec.setToggleGroup(toggleGroup);
+
+        // Configuramos la acción para cambiar los campos
         selAlim.setOnAction(event -> toggleCampos(true));
         selElec.setOnAction(event -> toggleCampos(false));
     }
 
     private void toggleCampos(boolean esAlimenticio) {
-        txtCal.setDisable(!esAlimenticio);
-        txtVolt.setDisable(esAlimenticio);
+        txtCal.setDisable(!selAlim.isSelected());
+        txtVolt.setDisable(!selElec.isSelected());
     }
 
     @FXML
@@ -53,11 +63,25 @@ public class ControladorProducto {
         Producto producto = null;
 
         if (selAlim.isSelected()) {
-            String calorias = txtCal.getText();
-            producto = new ProductoAlimenticio(idProducto, "Alimenticio", descripcion, calorias);
+            String aporteCalorico = txtCal.getText();
+            
+            ProductoAlimenticioBuilder builder = new ProductoAlimenticioBuilder();
+            builder.setIdProducto(idProducto);
+            builder.setTipo("Alimenticio");
+            builder.setDescripcion(descripcion);
+            builder.setAporteCalorico(aporteCalorico);
+            producto = builder.getProduct();
+            
         } else if (selElec.isSelected()) {
-            String voltaje = txtVolt.getText();
-            producto = new ProductoElectrico(idProducto, "Eléctrico", descripcion, voltaje);
+            String voltajeEntrada = txtVolt.getText();
+            
+            ProductoElectricoBuilder builder = new ProductoElectricoBuilder();
+            builder.setIdProducto(idProducto);
+            builder.setTipo("Eléctrico");
+            builder.setDescripcion(descripcion);
+            builder.setVoltajeEntrada(voltajeEntrada);
+            producto = builder.getProduct();
+            
         } else {
             mostrarAlerta("Error", "Debes seleccionar un tipo de producto.");
             return;
@@ -78,7 +102,7 @@ public class ControladorProducto {
     private void abrirCliente() {
         try {
             App.cambiarVista("FormularioCliente");
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
         }

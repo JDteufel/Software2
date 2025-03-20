@@ -24,13 +24,21 @@ public class App extends Application {
         primaryStage.show();
     }
 
-    public static void cambiarVista(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/co/edu/poli/ejemplo1/vista/" + fxml + ".fxml"));
-        Parent root = fxmlLoader.load();
-        scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
+    public static void cambiarVista(String fxml) {
+        try {
+            System.out.println("Cambiando a vista: " + fxml);
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/co/edu/poli/ejemplo1/vista/" + fxml + ".fxml"));
+            Parent root = fxmlLoader.load();
+            scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.centerOnScreen();
+            System.out.println("Cambio de vista exitoso.");
+        } catch (IOException e) {
+            System.out.println("Error al cambiar de vista a: " + fxml);
+            e.printStackTrace();
+        }
     }
+
 
     public static void main(String[] args) {
         launch();
