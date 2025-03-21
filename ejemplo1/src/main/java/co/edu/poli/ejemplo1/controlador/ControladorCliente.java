@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import java.io.IOException;
-import java.util.*;
 import java.util.List;
 import co.edu.poli.ejemplo1.servicios.DAO;
 import co.edu.poli.ejemplo1.vista.App;

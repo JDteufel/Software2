@@ -67,7 +67,7 @@
       </Button>
       <Button fx:id="bttAllP" layoutX="617.0" layoutY="287.0" mnemonicParsing="false" text="Buscar" />
       <TextField fx:id="txtAllP" layoutX="374.0" layoutY="335.0" prefHeight="352.0" prefWidth="294.0" />
-      <Button fx:id="abrirCliente" layoutX="570.0" layoutY="737.0" mnemonicParsing="false" onAction="#AbrirCliente" prefHeight="34.0" prefWidth="95.0" text="Clientes" textFill="#ff992e">
+      <Button fx:id="abrirCliente" layoutX="570.0" layoutY="737.0" mnemonicParsing="false" onAction="#abrirCliente" prefHeight="34.0" prefWidth="95.0" text="Clientes" textFill="#ff992e">
          <font>
             <Font name="Impact" size="18.0" />
          </font>
