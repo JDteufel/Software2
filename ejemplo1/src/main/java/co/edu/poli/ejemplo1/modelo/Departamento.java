@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Departamento implements ComponenteDepartamento {
     private String nombre;
-    private List<ComponenteDepartamento> componentes; // Puede contener empleados o subdepartamentos
+    private List<ComponenteDepartamento> componentes;
 
     public Departamento(String nombre) {
         this.nombre = nombre;
