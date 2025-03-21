@@ -84,4 +84,14 @@ public class ControladorProducto {
         }
     }
 
+    @FXML
+    private void abrirPagos() {
+        try {
+            App.cambiarVista("MetodosdePago");
+        } catch (IOException e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de Pagos.");
+        }
+    }
+
 }
