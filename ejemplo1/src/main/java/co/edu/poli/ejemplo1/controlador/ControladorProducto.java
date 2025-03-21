@@ -5,9 +5,6 @@ import javafx.scene.control.*;
 import co.edu.poli.ejemplo1.servicios.ConsultaEsp;
 import co.edu.poli.ejemplo1.servicios.DAOimplementProducto;
 import co.edu.poli.ejemplo1.vista.App;
-
-import java.io.IOException;
-
 import co.edu.poli.ejemplo1.modelo.Director;
 import co.edu.poli.ejemplo1.modelo.Producto;
 import co.edu.poli.ejemplo1.modelo.ProductoAlimenticioBuilder;

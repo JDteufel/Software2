@@ -6,22 +6,18 @@ public class Pedido {
 
 	public Pedido() {
 	}
-
 	/**
 	 * 
 	 */
 	private String numero;
-
 	/**
 	 * 
 	 */
 	private String fecha;
-
 	/**
 	 * 
 	 */
 	private Cliente cliente;
-
 	/**
 	 * 
 	 */
