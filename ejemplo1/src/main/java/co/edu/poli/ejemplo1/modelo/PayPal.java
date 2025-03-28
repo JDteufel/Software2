@@ -33,7 +33,7 @@ public class PayPal {
     }
 
     public double conversion() {
-        costoDolar = costoInicial * valorDolar + 9;
+        costoDolar = (costoInicial * valorDolar) + 9;
         return costoDolar;
     }
 

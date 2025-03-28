@@ -2,12 +2,16 @@ package co.edu.poli.ejemplo1.controlador;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.event.ActionEvent;
 import co.edu.poli.ejemplo1.servicios.ConsultaEsp;
 import co.edu.poli.ejemplo1.servicios.DAOimplementProducto;
 import co.edu.poli.ejemplo1.vista.App;
 import co.edu.poli.ejemplo1.modelo.Producto;
 import co.edu.poli.ejemplo1.modelo.ProductoAlimenticio;
 import co.edu.poli.ejemplo1.modelo.ProductoElectrico;
+import co.edu.poli.ejemplo1.modelo.Empleado;
+import co.edu.poli.ejemplo1.modelo.Departamento;
+import java.util.List;
 
 public class ControladorProducto {
 
