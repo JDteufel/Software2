@@ -23,13 +23,18 @@ public class App extends Application {
         primaryStage.show();
     }
 
-    public static void cambiarVista(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/co/edu/poli/ejemplo1/vista/" + fxml + ".fxml"));
-        Parent root = fxmlLoader.load();
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-        primaryStage.centerOnScreen();
+    public static void cambiarVista(String fxml) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/co/edu/poli/ejemplo1/vista/" + fxml + ".fxml"));
+            Parent root = fxmlLoader.load();
+            
+            primaryStage.setScene(new Scene(root));
+            primaryStage.centerOnScreen();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     public static void main(String[] args) {
         launch();

@@ -93,4 +93,36 @@ public class ControladorProducto {
         }
     }
 
+    @FXML
+    void click(ActionEvent event) {
+        // Crear departamentos con empleados
+        Departamento dptoVentas = new Departamento("Ventas");
+        Departamento dptoTI = new Departamento("Tecnología");
+
+        Empleado e1 = new Empleado("E001", "Juan Pérez");
+        Empleado e2 = new Empleado("E002", "María López");
+        Empleado e3 = new Empleado("E003", "Carlos Gómez");
+
+        dptoVentas.agregarComponente(e1);
+        dptoVentas.agregarComponente(e2);
+        dptoTI.agregarComponente(e2);
+        dptoTI.agregarComponente(e3);
+
+        // Construir el mensaje con los empleados por departamento
+        StringBuilder mensaje = new StringBuilder("📌 Empleados por Departamento:\n");
+
+        for (Departamento depto : List.of(dptoVentas, dptoTI)) {
+            mensaje.append("\n📂 ").append(depto.getNombre()).append(":\n");
+            for (Empleado emp : depto.obtenerEmpleados()) {
+                mensaje.append("  - ").append(emp.getNombre()).append("\n");
+            }
+        }
+
+        // Mostrar mensaje en una ventana emergente
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("Departamentos y Empleados");
+        alerta.setHeaderText("Información de Empleados por Departamento");
+        alerta.setContentText(mensaje.toString());
+        alerta.showAndWait();
+    }
 }
