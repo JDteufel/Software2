@@ -14,7 +14,7 @@ import co.edu.poli.ejemplo1.modelo.ProductoElectrico;
 public class ControladorProducto {
 
     @FXML
-    private Button btt_CP, btt_DP, btt_RP, btt_UP, bttAllP, abrirCliente;
+    private Button btt_CP, btt_DP, btt_RP, btt_UP, bttAllP, abrirCliente, abrirPagos;
 
     @FXML
     private RadioButton selAlim, selElec;

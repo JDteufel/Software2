@@ -14,7 +14,6 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Stage primaryStage;
-    private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -27,8 +26,8 @@ public class App extends Application {
     public static void cambiarVista(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/co/edu/poli/ejemplo1/vista/" + fxml + ".fxml"));
         Parent root = fxmlLoader.load();
-        scene = new Scene(root);
-        primaryStage.setScene(scene);
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
         primaryStage.centerOnScreen();
     }
 
