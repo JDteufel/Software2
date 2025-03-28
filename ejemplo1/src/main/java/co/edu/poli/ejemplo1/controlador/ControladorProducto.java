@@ -5,8 +5,6 @@ import javafx.scene.control.*;
 import co.edu.poli.ejemplo1.servicios.ConsultaEsp;
 import co.edu.poli.ejemplo1.servicios.DAOimplementProducto;
 import co.edu.poli.ejemplo1.vista.App;
-
-import java.io.IOException;
 import co.edu.poli.ejemplo1.modelo.Producto;
 import co.edu.poli.ejemplo1.modelo.ProductoAlimenticio;
 import co.edu.poli.ejemplo1.modelo.ProductoElectrico;
@@ -76,9 +74,10 @@ public class ControladorProducto {
     
     @FXML
     private void abrirCliente() {
+        System.out.println("Intentando abrir la vista de Cliente...");
         try {
             App.cambiarVista("FormularioCliente");
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
         }
@@ -88,7 +87,7 @@ public class ControladorProducto {
     private void abrirPagos() {
         try {
             App.cambiarVista("MetodosdePago");
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             mostrarAlerta("Error", "No se pudo abrir el formulario de Pagos.");
         }

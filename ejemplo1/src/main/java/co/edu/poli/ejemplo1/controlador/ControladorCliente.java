@@ -5,7 +5,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
-import java.io.IOException;
 import java.util.List;
 import co.edu.poli.ejemplo1.servicios.DAO;
 import co.edu.poli.ejemplo1.vista.App;
@@ -15,7 +14,7 @@ public class ControladorCliente {
 	private DAO<Cliente, String> DAO;
 
     @FXML
-    private Button bttAll, btt_C, btt_D, btt_R, btt_U, abrirProducto;
+    private Button bttAll, btt_C, btt_D, btt_R, btt_U, abrirProducto, abrirProveedor;
 
     @FXML
     private TextField txtAll, txtId_C, txtId_D, txtId_R, txtId_U, txtNmbr_C, txtNmbr_U;
@@ -94,9 +93,23 @@ public class ControladorCliente {
     
     @FXML
     private void abrirProducto() {
+        System.out.println("Intentando abrir la vista de productos...");
         try {
             App.cambiarVista("FormularioProducto");
-        } catch (IOException e) {
+            System.out.println("Vista de productos abierta correctamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de Producto.");
+        }
+    }
+    
+    @FXML
+    void abrirProveedor(ActionEvent event) {
+        System.out.println("Intentando abrir la vista de proveedor...");
+        try {
+            App.cambiarVista("FormularioProveedor");
+            System.out.println("Vista de proveedor abierta correctamente.");
+        } catch (Exception e) {
             e.printStackTrace();
             mostrarAlerta("Error", "No se pudo abrir el formulario de Producto.");
         }

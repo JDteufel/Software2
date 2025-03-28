@@ -80,5 +80,10 @@
             <Font size="18.0" />
          </font>
       </Text>
+      <Button fx:id="abrirProveedor" layoutX="490.0" layoutY="648.0" mnemonicParsing="false" onAction="#abrirProveedor" text="Proveedores" textFill="#5fd730">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
