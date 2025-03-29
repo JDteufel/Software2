@@ -4,6 +4,7 @@ import co.edu.poli.ejemplo1.modelo.Director;
 import co.edu.poli.ejemplo1.modelo.Proveedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -60,4 +61,5 @@ public class ControladorProveedor {
         alert.setContentText(proveedor.toString());
         alert.showAndWait();
     }
+
 }
