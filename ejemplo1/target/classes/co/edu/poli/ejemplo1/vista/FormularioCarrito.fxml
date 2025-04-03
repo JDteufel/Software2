@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo1.controlador.ControladorCarrito">
+   <children>
+      <Button fx:id="bttInicio" layoutX="24.0" layoutY="651.0" mnemonicParsing="false" onAction="#bttInicio" text="&lt;- Inicio" textFill="#df70ff">
+         <font>
+            <Font name="Impact" size="14.0" />
+         </font>
+         <effect>
+            <SepiaTone />
+         </effect>
+      </Button>
+      <Text layoutX="37.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carrito de Compras:">
+         <font>
+            <Font name="Impact" size="35.0" />
+         </font>
+      </Text>
+      <Line endX="304.0" layoutX="323.0" layoutY="108.0" startX="-323.0" stroke="#df70ff" strokeWidth="3.0" />
+      <Text layoutX="37.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ver compra:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCompra" editable="false" layoutX="37.0" layoutY="197.0" prefHeight="357.0" prefWidth="227.0" />
+      <Button fx:id="bttVer" layoutX="179.0" layoutY="155.0" mnemonicParsing="false" onAction="#bttVer" text="Ver" textFill="#9e3ebc">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text layoutX="361.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agregaciones:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="selDesc" layoutX="355.0" layoutY="207.0" mnemonicParsing="false" text="Descuento">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="selEnvio" layoutX="360.0" layoutY="431.0" mnemonicParsing="false" text="Envio Gratis">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="selPunto" layoutX="355.0" layoutY="318.0" mnemonicParsing="false" text="Puntos">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="txtDesc" layoutX="355.0" layoutY="245.0" promptText="Valor del descuento..." />
+      <TextField fx:id="txtPunto" layoutX="355.0" layoutY="352.0" promptText="N° puntos..." />
+      <Button fx:id="bttFin" layoutX="361.0" layoutY="511.0" mnemonicParsing="false" text="Finalizar Compra" textFill="#df70ff">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

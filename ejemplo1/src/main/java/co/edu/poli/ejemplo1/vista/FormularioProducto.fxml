@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo1.controlador.ControladorProducto">
    <children>
-      <Line endX="366.0" layoutX="332.0" layoutY="65.0" startX="-342.5" stroke="#30beff" strokeWidth="3.0" />
+      <Line endX="356.0" layoutX="332.0" layoutY="65.0" startX="-342.5" stroke="#30beff" strokeWidth="3.0" />
       <ImageView fitHeight="102.0" fitWidth="133.0" layoutX="489.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../../../Documents/POLI/Software%202/comprar.png" />
@@ -32,42 +32,34 @@
       </RadioButton>
       <TextField fx:id="txtCal" layoutX="15.0" layoutY="211.0" text="Aporte Calorico..." />
       <TextField fx:id="txtVolt" layoutX="193.0" layoutY="211.0" text="Voltaje de Entrada..." />
-      <Button fx:id="bttGetId" layoutX="21.0" layoutY="607.0" mnemonicParsing="false" text="Clonar" />
+      <Button fx:id="bttGetId" layoutX="280.0" layoutY="595.0" mnemonicParsing="false" onAction="#bttGetId" text="Clonar" />
       <TextField fx:id="txtId_CP" editable="false" layoutX="15.0" layoutY="291.0" text="..." />
       <TextField fx:id="txtId_RP" layoutX="15.0" layoutY="396.0" text="Id Producto..." />
-      <Button fx:id="btt_CP" layoutX="178.0" layoutY="291.0" mnemonicParsing="false" text="ok" textFill="#00861f">
+      <Button fx:id="btt_CP" layoutX="178.0" layoutY="291.0" mnemonicParsing="false" onAction="#create" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btt_RP" layoutX="178.0" layoutY="396.0" mnemonicParsing="false" text="ok" textFill="#00861f">
+      <Button fx:id="btt_RP" layoutX="178.0" layoutY="396.0" mnemonicParsing="false" onAction="#btt_RP" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
       <TextField fx:id="txtId_UP" layoutX="15.0" layoutY="486.0" text="Id Producto..." />
       <TextField fx:id="txtNmbr_UP" layoutX="15.0" layoutY="511.0" text="Nombre Producto..." />
-      <Button fx:id="btt_UP" layoutX="188.0" layoutY="511.0" mnemonicParsing="false" text="ok" textFill="#00861f">
+      <Button fx:id="btt_UP" layoutX="188.0" layoutY="511.0" mnemonicParsing="false" onAction="#btt_UP" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="txtId_DP" layoutX="527.0" layoutY="116.0" text="Id Producto..." />
-      <Button fx:id="btt_DP" layoutX="489.0" layoutY="116.0" mnemonicParsing="false" text="ok" textFill="#00861f">
+      <TextField fx:id="txtId_DP" layoutX="378.0" layoutY="116.0" text="Id Producto..." />
+      <Button fx:id="btt_DP" layoutX="540.0" layoutY="116.0" mnemonicParsing="false" onAction="#btt_DP" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="bttAllP" layoutX="622.0" layoutY="186.0" mnemonicParsing="false" text="Buscar" />
+      <Button fx:id="bttAllP" layoutX="622.0" layoutY="186.0" mnemonicParsing="false" onAction="#bttAllP" text="Buscar" />
       <TextField fx:id="txtAllP" layoutX="380.0" layoutY="233.0" prefHeight="352.0" prefWidth="294.0" />
-      <Button fx:id="abrirCliente" layoutX="575.0" layoutY="598.0" mnemonicParsing="false" onAction="#abrirCliente" prefHeight="34.0" prefWidth="95.0" text="Clientes" textFill="#ff992e">
-         <font>
-            <Font name="Impact" size="18.0" />
-         </font>
-         <effect>
-            <SepiaTone />
-         </effect>
-      </Button>
       <Text layoutX="13.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos:">
          <font>
             <Font name="Impact" size="35.0" />
@@ -98,7 +90,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="529.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Producto:">
+      <Text layoutX="380.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Producto:">
          <font>
             <Font size="18.0" />
          </font>
@@ -108,10 +100,10 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="abrirPagos" layoutX="112.0" layoutY="607.0" mnemonicParsing="false" onAction="#abrirPagos" text="Pagos" />
-      <Button fx:id="bttcom" layoutX="204.0" layoutY="607.0" mnemonicParsing="false" onAction="#click" text="Composite" /><Button fx:id="abrirEnvio" layoutX="463.0" layoutY="598.0" mnemonicParsing="false" onAction="#abrirEnvio" prefHeight="34.0" prefWidth="95.0" text="Envio" textAlignment="CENTER" textFill="#72ff30">
+      <Button fx:id="bttcom" layoutX="394.0" layoutY="595.0" mnemonicParsing="false" onAction="#bttcom" text="Composite" />
+      <Button fx:id="bttInicio" layoutX="35.0" layoutY="594.0" mnemonicParsing="false" onAction="#bttInicio" text="&lt;- Inicio" textFill="#ff992e">
          <font>
-            <Font name="Impact" size="18.0" />
+            <Font name="Impact" size="14.0" />
          </font>
          <effect>
             <SepiaTone />
