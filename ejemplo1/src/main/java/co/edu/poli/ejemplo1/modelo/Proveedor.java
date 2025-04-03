@@ -20,7 +20,7 @@ public class Proveedor {
     
     @Override
     public String toString() {
-        return "Proveedor {evaluacion=" + evaluacion + ", certificacion=" + certificacion + ", politicaEntrega=" + politicaEntrega + "}";
+        return "Proveedor {evaluacion = " + evaluacion + ",\ncertificacion = " + certificacion + ", \npoliticaEntrega = " + politicaEntrega + "}";
     }
     
     public static class Builder {

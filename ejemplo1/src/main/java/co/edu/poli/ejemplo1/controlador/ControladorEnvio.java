@@ -6,6 +6,7 @@ import co.edu.poli.ejemplo1.modelo.EnvioInternacional;
 import co.edu.poli.ejemplo1.modelo.Mercancia;
 import co.edu.poli.ejemplo1.modelo.Documento;
 import co.edu.poli.ejemplo1.modelo.ProductoNormal;
+import co.edu.poli.ejemplo1.vista.App;
 import co.edu.poli.ejemplo1.modelo.ProductoFragil;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ import javafx.scene.control.ComboBox;
 public class ControladorEnvio {
 
     @FXML
-    private Button bt1;
+    private Button bt1, bttInicio;
 
     @FXML
     private ComboBox<String> cb1; // ComboBox para tipo de envío
@@ -85,6 +86,18 @@ public class ControladorEnvio {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+
+    @FXML
+    private void bttInicio() {
+        System.out.println("Intentando abrir la vista de inicio...");
+        try {
+            App.cambiarVista("FormularioInicio");
+            System.out.println("Vista de inicio abierta correctamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de inicio.");
+        }
     }
 }
 

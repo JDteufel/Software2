@@ -2,6 +2,7 @@ package co.edu.poli.ejemplo1.controlador;
 
 import co.edu.poli.ejemplo1.modelo.Director;
 import co.edu.poli.ejemplo1.modelo.Proveedor;
+import co.edu.poli.ejemplo1.vista.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -12,7 +13,7 @@ import javafx.scene.control.TextField;
 
 public class ControladorProveedor {
     @FXML
-    private Button bttOk;
+    private Button bttOk, bttInicio;
 
     @FXML
     private RadioButton selCertif, selEvalua, selPolEntr;
@@ -59,5 +60,25 @@ public class ControladorProveedor {
         alert.setHeaderText("Datos del Proveedor Generado");
         alert.setContentText(proveedor.toString());
         alert.showAndWait();
+    }
+
+    @FXML
+    private void bttInicio() {
+        System.out.println("Intentando abrir la vista de inicio...");
+        try {
+            App.cambiarVista("FormularioInicio");
+            System.out.println("Vista de inicio abierta correctamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de inicio.");
+        }
+    }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
     }
 }

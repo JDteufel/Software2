@@ -2,7 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -42,14 +42,6 @@
             <Image url="@../../../../../../../../../../Documents/POLI/Software%202/usuario.png" />
          </image>
       </ImageView>
-      <Button fx:id="abrirProducto" layoutX="21.0" layoutY="648.0" mnemonicParsing="false" onAction="#abrirProducto" prefHeight="34.0" prefWidth="102.0" text="Productos" textFill="#30beff">
-         <font>
-            <Font name="Impact" size="18.0" />
-         </font>
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </Button>
       <Text layoutX="35.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes:">
          <font>
             <Font name="Impact" size="35.0" />
@@ -80,10 +72,13 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="abrirProveedor" layoutX="490.0" layoutY="648.0" mnemonicParsing="false" onAction="#abrirProveedor" text="Proveedores" textFill="#5fd730">
+      <Button fx:id="bttInicio" layoutX="56.0" layoutY="627.0" mnemonicParsing="false" onAction="#bttInicio" text="&lt;- Inicio" textFill="#ff992e">
          <font>
-            <Font name="Impact" size="18.0" />
+            <Font name="Impact" size="14.0" />
          </font>
+         <effect>
+            <SepiaTone />
+         </effect>
       </Button>
    </children>
 </AnchorPane>

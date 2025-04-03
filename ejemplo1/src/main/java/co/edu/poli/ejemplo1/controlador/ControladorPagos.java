@@ -7,6 +7,7 @@ import co.edu.poli.ejemplo1.modelo.Nequi;
 import co.edu.poli.ejemplo1.modelo.Pagos;
 import co.edu.poli.ejemplo1.modelo.PayPal;
 import co.edu.poli.ejemplo1.modelo.PayPalAdapter;
+import co.edu.poli.ejemplo1.vista.App;
 
 public class ControladorPagos {
     
@@ -14,7 +15,7 @@ public class ControladorPagos {
 
     @FXML private TextField Monto;
 
-    @FXML private Button Pagar;
+    @FXML private Button Pagar, bttInicio;
 
     private ToggleGroup toggleGroup;
 
@@ -63,6 +64,18 @@ public class ControladorPagos {
 
         double resultado = metodoPago.Cobro(monto);
         mostrarAlerta("Resultado del Pago", "El monto total procesado es: " + resultado);
+    }
+
+    @FXML
+    private void bttInicio() {
+        System.out.println("Intentando abrir la vista de inicio...");
+        try {
+            App.cambiarVista("FormularioInicio");
+            System.out.println("Vista de inicio abierta correctamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de inicio.");
+        }
     }
 
 }

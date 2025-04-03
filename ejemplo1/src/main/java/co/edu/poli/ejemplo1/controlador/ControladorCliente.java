@@ -14,7 +14,7 @@ public class ControladorCliente {
 	private DAO<Cliente, String> DAO;
 
     @FXML
-    private Button bttAll, btt_C, btt_D, btt_R, btt_U, abrirProducto, abrirProveedor;
+    private Button bttAll, btt_C, btt_D, btt_R, btt_U, bttInicio;
 
     @FXML
     private TextField txtAll, txtId_C, txtId_D, txtId_R, txtId_U, txtNmbr_C, txtNmbr_U;
@@ -92,26 +92,15 @@ public class ControladorCliente {
     }
     
     @FXML
-    private void abrirProducto() {
-        System.out.println("Intentando abrir la vista de productos...");
+    private void bttInicio() {
+        System.out.println("Intentando abrir la vista de inicio...");
         try {
-            App.cambiarVista("FormularioProducto");
-            System.out.println("Vista de productos abierta correctamente.");
+            App.cambiarVista("FormularioInicio");
+            System.out.println("Vista de inicio abierta correctamente.");
         } catch (Exception e) {
             e.printStackTrace();
-            mostrarAlerta("Error", "No se pudo abrir el formulario de Producto.");
+            mostrarAlerta("Error", "No se pudo abrir el formulario de inicio.");
         }
     }
     
-    @FXML
-    void abrirProveedor(ActionEvent event) {
-        System.out.println("Intentando abrir la vista de proveedor...");
-        try {
-            App.cambiarVista("FormularioProveedor");
-            System.out.println("Vista de proveedor abierta correctamente.");
-        } catch (Exception e) {
-            e.printStackTrace();
-            mostrarAlerta("Error", "No se pudo abrir el formulario de Producto.");
-        }
-    }
 }

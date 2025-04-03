@@ -16,7 +16,7 @@ import java.util.List;
 public class ControladorProducto {
 
     @FXML
-    private Button btt_CP, btt_DP, btt_RP, btt_UP, bttAllP, abrirCliente, abrirPagos;
+    private Button btt_CP, btt_DP, btt_RP, btt_UP, bttAllP, bttInicio, bttGetId, bttcom;
 
     @FXML
     private RadioButton selAlim, selElec;
@@ -48,12 +48,12 @@ public class ControladorProducto {
     }
 
     @FXML
-    public void create() {
+    public void create(ActionEvent event) {
         String idProducto = txtId_CP.getText();
         String descripcion = txtNmbr_CP.getText();
-
+    
         Producto producto = null;
-
+    
         if (selAlim.isSelected()) {
             String calorias = txtCal.getText();
             producto = new ProductoAlimenticio(idProducto, "Alimenticio", descripcion, calorias);
@@ -64,9 +64,12 @@ public class ControladorProducto {
             mostrarAlerta("Error", "Debes seleccionar un tipo de producto.");
             return;
         }
+    
         consulta.create(producto);
         mostrarAlerta("Éxito", "Producto creado correctamente:\n" + producto);
     }
+    
+
 
     private void mostrarAlerta(String titulo, String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -75,30 +78,9 @@ public class ControladorProducto {
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }
-    
-    @FXML
-    private void abrirCliente() {
-        System.out.println("Intentando abrir la vista de Cliente...");
-        try {
-            App.cambiarVista("FormularioCliente");
-        } catch (Exception e) {
-            e.printStackTrace();
-            mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
-        }
-    }
 
     @FXML
-    private void abrirPagos() {
-        try {
-            App.cambiarVista("MetodosdePago");
-        } catch (Exception e) {
-            e.printStackTrace();
-            mostrarAlerta("Error", "No se pudo abrir el formulario de Pagos.");
-        }
-    }
-
-    @FXML
-    void click(ActionEvent event) {
+    void bttGetId(ActionEvent event) {
         // Crear departamentos con empleados
         Departamento dptoVentas = new Departamento("Ventas");
         Departamento dptoTI = new Departamento("Tecnología");
@@ -129,13 +111,47 @@ public class ControladorProducto {
         alerta.setContentText(mensaje.toString());
         alerta.showAndWait();
     }
+
     @FXML
-    void abrirEnvio(ActionEvent event) {
+    private void bttInicio() {
+        System.out.println("Intentando abrir la vista de inicio...");
         try {
-            App.cambiarVista("FormularioEnvio");
+            App.cambiarVista("FormularioInicio");
+            System.out.println("Vista de inicio abierta correctamente.");
         } catch (Exception e) {
             e.printStackTrace();
-            mostrarAlerta("Error", "No se pudo abrir el formulario de Envio.");
+            mostrarAlerta("Error", "No se pudo abrir el formulario de inicio.");
         }
     }
+
+    @FXML
+    void bttAllP(ActionEvent event) {
+
+    }
+
+    @FXML
+    void bttInicio(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btt_DP(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btt_RP(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btt_UP(ActionEvent event) {
+
+    }
+
+    @FXML
+    void bttcom(ActionEvent event) {
+
+    }
+
 }
