@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo1.controlador.ControladorCarrito">
    <children>
-      <Button fx:id="bttInicio" layoutX="24.0" layoutY="651.0" mnemonicParsing="false" onAction="#bttInicio" text="&lt;- Inicio" textFill="#df70ff">
+      <Button fx:id="bttInicio" layoutX="19.0" layoutY="643.0" mnemonicParsing="false" onAction="#bttInicio" text="&lt;- Inicio" textFill="#df70ff">
          <font>
             <Font name="Impact" size="14.0" />
          </font>
@@ -46,7 +46,7 @@
             <Font size="16.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="selEnvio" layoutX="360.0" layoutY="431.0" mnemonicParsing="false" text="Envio Gratis">
+      <RadioButton fx:id="selEnvio" layoutX="360.0" layoutY="431.0" mnemonicParsing="false" text="Envío Gratis">
          <font>
             <Font size="16.0" />
          </font>

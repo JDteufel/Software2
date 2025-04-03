@@ -13,24 +13,24 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo1.controlador.ControladorCliente">
    <children>
       <TextField fx:id="txtAll" editable="false" layoutX="339.0" layoutY="199.0" prefHeight="301.0" prefWidth="269.0" />
-      <TextField fx:id="txtId_C" layoutX="56.0" layoutY="198.0" text="Id cliente..." />
-      <TextField fx:id="txtNmbr_C" layoutX="56.0" layoutY="223.0" text="Nombre Cliente..." />
+      <TextField fx:id="txtId_C" layoutX="56.0" layoutY="198.0" promptText="ID Cliente" />
+      <TextField fx:id="txtNmbr_C" layoutX="56.0" layoutY="223.0" promptText="Nombres y Apellidos" />
       <Button fx:id="btt_C" layoutX="230.0" layoutY="211.0" mnemonicParsing="false" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextField fx:id="txtId_R" layoutX="56.0" layoutY="324.0" text="Id Cliente..." />
+      <TextField fx:id="txtId_R" layoutX="56.0" layoutY="324.0" promptText="ID Cliente" />
       <Button fx:id="btt_R" layoutX="230.0" layoutY="324.0" mnemonicParsing="false" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextField fx:id="txtId_U" layoutX="56.0" layoutY="418.0" text="Id Cliente..." />
-      <TextField fx:id="txtNmbr_U" layoutX="56.0" layoutY="443.0" text="Nombre Cliente..." />
+      <TextField fx:id="txtId_U" layoutX="56.0" layoutY="418.0" promptText="ID Cliente" />
+      <TextField fx:id="txtNmbr_U" layoutX="56.0" layoutY="443.0" promptText="Nombre" />
       <Button fx:id="btt_U" layoutX="230.0" layoutY="431.0" mnemonicParsing="false" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextField fx:id="txtId_D" layoutX="56.0" layoutY="543.0" text="Id Cliente..." />
+      <TextField fx:id="txtId_D" layoutX="56.0" layoutY="543.0" promptText="ID Cliente" />
       <Button fx:id="btt_D" layoutX="230.0" layoutY="543.0" mnemonicParsing="false" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />

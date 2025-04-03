@@ -131,7 +131,14 @@ public class ControladorProducto {
 
     @FXML
     void bttInicio(ActionEvent event) {
-
+        System.out.println("Intentando abrir la vista de inicio...");
+        try {
+            App.cambiarVista("FormularioInicio");
+            System.out.println("Vista de inicio abierta correctamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de inicio.");
+        }
     }
 
     @FXML

@@ -10,28 +10,22 @@ import javafx.scene.control.TextField;
 
 public class ControladorCarrito {
 
-@FXML
-private Button bttFin, bttInicio, bttVer;
+    @FXML
+    private Button bttFin, bttInicio, bttVer;
 
-@FXML
-private RadioButton selDesc, selEnvio, selPunto;
+    @FXML
+    private RadioButton selDesc, selEnvio, selPunto;
 
-@FXML
-private TextField txtCompra, txtDesc, txtPunto;
+    @FXML
+    private TextField txtCompra, txtDesc, txtPunto;
 
+    @FXML
+    void bttVer(ActionEvent event) {
 
-@FXML
-void bttInicio(ActionEvent event) {
-
-}
-
-@FXML
-void bttVer(ActionEvent event) {
-
-}    
+    }    
 
 
-@FXML
+    @FXML
     private void bttInicio() {
         System.out.println("Intentando abrir la vista de inicio...");
         try {

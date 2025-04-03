@@ -17,7 +17,7 @@
          </font>
       </Text>
       <Line endX="300.0" layoutX="329.0" layoutY="99.0" startX="-329.0" stroke="#5fd730" strokeWidth="3.0" />
-      <Text layoutX="22.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecciona las caracteristicas del Proveedor:" wrappingWidth="345.05859375">
+      <Text layoutX="22.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecciona las características del Proveedor:" wrappingWidth="345.05859375">
          <font>
             <Font size="18.0" />
          </font>
@@ -27,19 +27,19 @@
             <Font size="15.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="selCertif" layoutX="242.0" layoutY="200.0" mnemonicParsing="false" onAction="#selCertif" text="Certificacion">
+      <RadioButton fx:id="selCertif" layoutX="242.0" layoutY="200.0" mnemonicParsing="false" onAction="#selCertif" text="Certificación">
          <font>
             <Font size="15.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="selPolEntr" layoutX="448.0" layoutY="200.0" mnemonicParsing="false" onAction="#selPolEntr" text="Politica de Entrega">
+      <RadioButton fx:id="selPolEntr" layoutX="448.0" layoutY="200.0" mnemonicParsing="false" onAction="#selPolEntr" text="Política de Entrega">
          <font>
             <Font size="15.0" />
          </font>
       </RadioButton>
-      <TextField fx:id="txtEvalua" layoutX="36.0" layoutY="230.0" text="..." />
-      <TextField fx:id="txtCertif" layoutX="242.0" layoutY="230.0" text="..." />
-      <TextField fx:id="txtPolEntr" layoutX="449.0" layoutY="230.0" text="..." />
+      <TextField fx:id="txtEvalua" layoutX="36.0" layoutY="230.0" />
+      <TextField fx:id="txtCertif" layoutX="242.0" layoutY="230.0" />
+      <TextField fx:id="txtPolEntr" layoutX="449.0" layoutY="230.0" />
       <Button fx:id="bttOk" layoutX="291.0" layoutY="299.0" mnemonicParsing="false" onAction="#bttOk" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
