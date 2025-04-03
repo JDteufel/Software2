@@ -109,5 +109,13 @@
          </font>
       </Text>
       <Button fx:id="bttcom" layoutX="105.0" layoutY="607.0" mnemonicParsing="false" onAction="#click" text="Composite" />
+      <Button fx:id="abrirEnvio" layoutX="473.0" layoutY="598.0" mnemonicParsing="false" onAction="#abrirEnvio" prefHeight="34.0" prefWidth="95.0" text="Envio" textAlignment="CENTER" textFill="#72ff30">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+         <effect>
+            <SepiaTone />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>

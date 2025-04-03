@@ -143,5 +143,15 @@ public class ControladorProducto {
         alerta.setContentText(mensaje.toString());
         alerta.showAndWait();
     }
+    
+    @FXML
+    void abrirEnvio(ActionEvent event) {
+        try {
+            App.cambiarVista("FormularioEnvio");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de Envio.");
+        }
+    }
 
 }
