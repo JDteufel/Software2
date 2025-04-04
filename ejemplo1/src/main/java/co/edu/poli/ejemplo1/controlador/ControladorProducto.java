@@ -105,7 +105,7 @@ public class ControladorProducto {
     }
 
     @FXML
-    void bttAllP(ActionEvent event) {
+    void readAll(ActionEvent event) {
 
     }
 
@@ -122,8 +122,16 @@ public class ControladorProducto {
     }
 
     @FXML
-    void btt_DP(ActionEvent event) {
+    void delete(ActionEvent event) {
+        String idProducto = txtId_CP.getText();
 
+        if (idProducto == null || idProducto.isEmpty()) {
+            mostrarAlerta("Error", "Debes ingresar un ID de producto.");
+            return;
+        }
+
+        consulta.delete(idProducto);
+        mostrarAlerta("Éxito", "Producto con ID " + idProducto + " eliminado correctamente.");
     }
 
     @FXML
@@ -145,7 +153,7 @@ public class ControladorProducto {
     }
 
     @FXML
-    void btt_UP(ActionEvent event) {
+    void update(ActionEvent event) {
 
     }
 

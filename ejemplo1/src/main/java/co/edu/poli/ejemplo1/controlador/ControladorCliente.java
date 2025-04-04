@@ -25,7 +25,6 @@ public class ControladorCliente {
         this.DAO = DAO;
     }
 
-
     @FXML
     private void create(ActionEvent event) {
         String id = txtId_C.getText();
@@ -102,5 +101,4 @@ public class ControladorCliente {
             mostrarAlerta("Error", "No se pudo abrir el formulario de inicio.");
         }
     }
-    
 }

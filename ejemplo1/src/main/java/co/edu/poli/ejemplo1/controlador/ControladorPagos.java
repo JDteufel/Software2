@@ -1,7 +1,6 @@
 package co.edu.poli.ejemplo1.controlador;
 
 import javafx.fxml.FXML;
-import java.util.ResourceBundle;
 import javafx.scene.control.*;
 import co.edu.poli.ejemplo1.modelo.Nequi;
 import co.edu.poli.ejemplo1.modelo.Pagos;

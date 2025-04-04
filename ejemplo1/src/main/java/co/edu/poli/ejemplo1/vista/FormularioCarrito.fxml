@@ -58,7 +58,7 @@
       </RadioButton>
       <TextField fx:id="txtDesc" layoutX="355.0" layoutY="245.0" promptText="Valor del descuento..." />
       <TextField fx:id="txtPunto" layoutX="355.0" layoutY="352.0" promptText="N° puntos..." />
-      <Button fx:id="bttFin" layoutX="361.0" layoutY="511.0" mnemonicParsing="false" text="Finalizar Compra" textFill="#df70ff">
+      <Button fx:id="bttFin" layoutX="361.0" layoutY="511.0" mnemonicParsing="false" onAction="#FinalizarCompra" text="Finalizar Compra" textFill="#df70ff">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
