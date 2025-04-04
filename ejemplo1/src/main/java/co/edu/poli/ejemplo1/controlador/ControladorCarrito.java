@@ -56,7 +56,7 @@ public class ControladorCarrito {
 
     @FXML
     private void FinalizarCompra(ActionEvent event) {
-        Carrito compra = new CompraNormal(); // Base purchase
+        Carrito compra = new CompraNormal();
         StringBuilder detalles = new StringBuilder("Detalles de la compra:\n");
         double descuentoAplicado = 0;
         boolean envioGratuito = false;
@@ -64,7 +64,7 @@ public class ControladorCarrito {
         if (selDesc.isSelected()) {
             try {
                 double descuento = Double.parseDouble(txtDesc.getText());
-                compra = new Descuento(compra, descuento); // Apply discount
+                compra = new Descuento(compra, descuento); 
                 descuentoAplicado = descuento;
                 detalles.append("- Descuento aplicado: ").append(descuento).append("%\n");
             } catch (NumberFormatException e) {
@@ -78,7 +78,7 @@ public class ControladorCarrito {
         if (selPunto.isSelected()) {
             try {
                 int puntos = Integer.parseInt(txtPunto.getText());
-                Puntos puntosCompra = new Puntos(compra); // Apply points
+                Puntos puntosCompra = new Puntos(compra); 
                 puntosCompra.setPuntosAcumulados(puntos);
                 compra = puntosCompra;
                 detalles.append("- Puntos usados: ").append(puntos).append("\n");
@@ -91,11 +91,11 @@ public class ControladorCarrito {
         }
 
         if (selEnvio.isSelected()) {
-            compra = new EnvioGratis(compra, 0); // Free shipping
+            compra = new EnvioGratis(compra, 0); 
             envioGratuito = true;
             detalles.append("- Envío: Gratis\n");
         } else {
-            compra = new EnvioGratis(compra, 6000); // Shipping with cost
+            compra = new EnvioGratis(compra, 6000);
             detalles.append("- Envío: Con costo (6000)\n");
         }
 

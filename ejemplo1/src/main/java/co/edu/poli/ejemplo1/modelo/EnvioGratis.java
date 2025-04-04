@@ -8,13 +8,13 @@ public class EnvioGratis extends Agregaciones {
         this.valorEnvio = valorEnvio;
     }
 
+    public void setValorEnvio(int valorEnvio) {
+        this.valorEnvio = valorEnvio;
+    }
+    
     @Override
     public double FinalizarCompra() {
         double total = super.FinalizarCompra();
         return total + valorEnvio;
-    }
-
-    public void setValorEnvio(int valorEnvio) {
-        this.valorEnvio = valorEnvio;
     }
 }

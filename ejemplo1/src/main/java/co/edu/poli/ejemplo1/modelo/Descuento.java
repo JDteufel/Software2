@@ -5,13 +5,12 @@ public class Descuento extends Agregaciones {
 
     public Descuento(Carrito carrito, double descuento) {
         super(carrito);
-        this.descuento = descuento / 100; // Convert percentage to decimal
+        this.descuento = descuento / 100;
     }
 
     @Override
     public double FinalizarCompra() {
         double total = super.FinalizarCompra();
-        return Math.max(0, total - (total * descuento)); // Asegurar que el total no sea negativo
+        return Math.max(0, total - (total * descuento));
     }
 }
-    

@@ -1,17 +1,10 @@
 package co.edu.poli.ejemplo1.modelo;
 
 public class Puntos extends Agregaciones {
-    private int puntosAcumulados = 0; // Puntos acumulados por el cliente
+    private int puntosAcumulados = 0;
 
     public Puntos(Carrito carrito) {
         super(carrito);
-    }
-
-    @Override
-    public double FinalizarCompra() {
-        double total = super.FinalizarCompra();
-        puntosAcumulados += total / 10; // Acumular puntos
-        return total;
     }
 
     public int getPuntosAcumulados() {
@@ -19,6 +12,13 @@ public class Puntos extends Agregaciones {
     }
 
     public void setPuntosAcumulados(int puntos) {
-        this.puntosAcumulados += puntos; // Acumular puntos adicionales
+        this.puntosAcumulados += puntos;
+    }
+    
+    @Override
+    public double FinalizarCompra() {
+        double total = super.FinalizarCompra();
+        puntosAcumulados += total / 10;
+        return total;
     }
 }
