@@ -7,10 +7,12 @@ import co.edu.poli.ejemplo1.servicios.ConsultaEsp;
 import co.edu.poli.ejemplo1.servicios.DAOimplementProducto;
 import co.edu.poli.ejemplo1.vista.App;
 import co.edu.poli.ejemplo1.modelo.Producto;
-import co.edu.poli.ejemplo1.modelo.ProductoAlimenticio;
-import co.edu.poli.ejemplo1.modelo.ProductoElectrico;
+import co.edu.poli.ejemplo1.modelo.ProductoFactory;
 import co.edu.poli.ejemplo1.modelo.Empleado;
+import co.edu.poli.ejemplo1.modelo.AlimenticioFactory;
 import co.edu.poli.ejemplo1.modelo.Departamento;
+import co.edu.poli.ejemplo1.modelo.ElectricoFactory;
+
 import java.util.List;
 
 public class ControladorProducto {
@@ -51,25 +53,22 @@ public class ControladorProducto {
     public void create(ActionEvent event) {
         String idProducto = txtId_CP.getText();
         String descripcion = txtNmbr_CP.getText();
-    
-        Producto producto = null;
-    
+        ProductoFactory factory = null;
+
         if (selAlim.isSelected()) {
-            String calorias = txtCal.getText();
-            producto = new ProductoAlimenticio(idProducto, "Alimenticio", descripcion, calorias);
+            factory = new AlimenticioFactory();
         } else if (selElec.isSelected()) {
-            String voltaje = txtVolt.getText();
-            producto = new ProductoElectrico(idProducto, "Eléctrico", descripcion, voltaje);
+            factory = new ElectricoFactory();
         } else {
             mostrarAlerta("Error", "Debes seleccionar un tipo de producto.");
             return;
         }
-    
+
+        Producto producto = factory.crearProducto(idProducto, descripcion,
+                selAlim.isSelected() ? txtCal.getText() : txtVolt.getText());
         consulta.create(producto);
         mostrarAlerta("Éxito", "Producto creado correctamente:\n" + producto);
     }
-    
-
 
     private void mostrarAlerta(String titulo, String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
