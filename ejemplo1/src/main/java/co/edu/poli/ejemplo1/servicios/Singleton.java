@@ -27,32 +27,39 @@ public class Singleton {
 			conexion = DriverManager.getConnection(URL, USUARIO, CONTRA);
 			System.out.println("Conexión establecida.");
 		} catch (SQLException e) {
-            throw new SQLException("Error al conectar con la base de datos: " + e.getMessage(), e);
+			System.err.println("Error al conectar con la base de datos: " + e.getMessage());
+			throw e;
 		}
 	}
 
-
-	public static void cerrarConexion() throws SQLException{
+	public static void cerrarConexion() throws SQLException {
 		if (conexion != null) {
 			try {
 				conexion.close();
 				conexion = null;
 				System.out.println("Conexión cerrada.");
 			} catch (SQLException e) {
-                throw new SQLException("Error al cerrar la conexión: " + e.getMessage(), e);
+				System.err.println("Error al cerrar la conexión: " + e.getMessage());
+				throw e;
 			}
 		}
 	}
 
 	public static Singleton getInstance() {
 		if (instancia == null) {
-			instancia = new Singleton();
+			synchronized (Singleton.class) {
+				if (instancia == null) {
+					instancia = new Singleton();
+				}
+			}
 		}
 		return instancia;
 	}
 	
-	public Connection conexionActiva() {
+	public Connection conexionActiva() throws SQLException {
+		if (conexion == null || conexion.isClosed()) {
+			throw new SQLException("La conexión no está activa.");
+		}
 		return conexion;
 	}
-	
 }

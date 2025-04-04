@@ -27,7 +27,7 @@ public class ControladorProducto {
     private ToggleGroup tipoProducto;
 
     @FXML
-    private TextField txtId_CP, txtNmbr_CP, txtCal, txtVolt;
+    private TextField txtId_CP, txtNmbr_CP, txtPrecio, txtCal, txtVolt;
 
     private ConsultaEsp<Producto, String> consulta;
 
@@ -44,6 +44,14 @@ public class ControladorProducto {
         selElec.setOnAction(event -> toggleCampos(false));
     }
 
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+
     private void toggleCampos(boolean esAlimenticio) {
         txtCal.setDisable(!esAlimenticio);
         txtVolt.setDisable(esAlimenticio);
@@ -53,6 +61,15 @@ public class ControladorProducto {
     public void create(ActionEvent event) {
         String idProducto = txtId_CP.getText();
         String descripcion = txtNmbr_CP.getText();
+        double precio;
+
+        try {
+            precio = Double.parseDouble(txtPrecio.getText());
+        } catch (NumberFormatException e) {
+            mostrarAlerta("Error", "El precio debe ser un número válido.");
+            return;
+        }
+
         ProductoFactory factory = null;
 
         if (selAlim.isSelected()) {
@@ -64,51 +81,15 @@ public class ControladorProducto {
             return;
         }
 
-        Producto producto = factory.crearProducto(idProducto, descripcion,
+        Producto producto = factory.crearProducto(idProducto, descripcion, precio,
                 selAlim.isSelected() ? txtCal.getText() : txtVolt.getText());
         consulta.create(producto);
         mostrarAlerta("Éxito", "Producto creado correctamente:\n" + producto);
     }
 
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
-    }
-
     @FXML
     void bttGetId(ActionEvent event) {
-        // Crear departamentos con empleados
-        Departamento dptoVentas = new Departamento("Ventas");
-        Departamento dptoTI = new Departamento("Tecnología");
-
-        Empleado e1 = new Empleado("E001", "Juan Pérez");
-        Empleado e2 = new Empleado("E002", "María López");
-        Empleado e3 = new Empleado("E003", "Carlos Gómez");
-
-        dptoVentas.agregarComponente(e1);
-        dptoVentas.agregarComponente(e2);
-        dptoTI.agregarComponente(e2);
-        dptoTI.agregarComponente(e3);
-
-        // Construir el mensaje con los empleados por departamento
-        StringBuilder mensaje = new StringBuilder("📌 Empleados por Departamento:\n");
-
-        for (Departamento depto : List.of(dptoVentas, dptoTI)) {
-            mensaje.append("\n📂 ").append(depto.getNombre()).append(":\n");
-            for (Empleado emp : depto.obtenerEmpleados()) {
-                mensaje.append("  - ").append(emp.getNombre()).append("\n");
-            }
-        }
-
-        // Mostrar mensaje en una ventana emergente
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle("Departamentos y Empleados");
-        alerta.setHeaderText("Información de Empleados por Departamento");
-        alerta.setContentText(mensaje.toString());
-        alerta.showAndWait();
+        
     }
 
     @FXML
@@ -146,8 +127,21 @@ public class ControladorProducto {
     }
 
     @FXML
-    void btt_RP(ActionEvent event) {
+    public void read(ActionEvent event) {
+        String idProducto = txtId_CP.getText();
 
+        if (idProducto == null || idProducto.isEmpty()) {
+            mostrarAlerta("Error", "Debes ingresar un ID de producto.");
+            return;
+        }
+
+        Producto producto = consulta.read(idProducto);
+
+        if (producto == null) {
+            mostrarAlerta("Error", "No se encontró un producto con el ID: " + idProducto);
+        } else {
+            mostrarAlerta("Producto encontrado", producto.toString());
+        }
     }
 
     @FXML
@@ -157,6 +151,32 @@ public class ControladorProducto {
 
     @FXML
     void bttcom(ActionEvent event) {
+        Departamento dptoVentas = new Departamento("Ventas");
+        Departamento dptoTI = new Departamento("Tecnología");
+
+        Empleado e1 = new Empleado("E001", "Juan Pérez");
+        Empleado e2 = new Empleado("E002", "María López");
+        Empleado e3 = new Empleado("E003", "Carlos Gómez");
+
+        dptoVentas.agregarComponente(e1);
+        dptoVentas.agregarComponente(e2);
+        dptoTI.agregarComponente(e2);
+        dptoTI.agregarComponente(e3);
+
+        StringBuilder mensaje = new StringBuilder("📌 Empleados por Departamento:\n");
+
+        for (Departamento depto : List.of(dptoVentas, dptoTI)) {
+            mensaje.append("\n📂 ").append(depto.getNombre()).append(":\n");
+            for (Empleado emp : depto.obtenerEmpleados()) {
+                mensaje.append("  - ").append(emp.getNombre()).append("\n");
+            }
+        }
+
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("Departamentos y Empleados");
+        alerta.setHeaderText("Información de Empleados por Departamento");
+        alerta.setContentText(mensaje.toString());
+        alerta.showAndWait();
 
     }
 

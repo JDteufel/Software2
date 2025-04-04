@@ -4,17 +4,20 @@ public abstract class Producto {
     private String idProducto;
     private String tipo;
     private String descripcion;
+    private double precio;
 
-    public Producto(String idProducto, String tipo , String descripcion) {
+    public Producto(String idProducto, String tipo, String descripcion, double precio) {
         this.idProducto = idProducto;
         this.tipo = tipo;
         this.descripcion = descripcion;
+        this.precio = precio;
     }
     
     protected Producto(Producto otro) {
         this.idProducto = otro.getIdProducto();
         this.tipo = otro.getTipo();
         this.descripcion = otro.getDescripcion();
+        this.precio = otro.getPrecio();
     }
 
     public String getIdProducto() {
@@ -40,6 +43,14 @@ public abstract class Producto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
     
     @Override
     public String toString() {
@@ -47,6 +58,7 @@ public abstract class Producto {
                 "id='" + idProducto + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
                 '}';
     }
 }

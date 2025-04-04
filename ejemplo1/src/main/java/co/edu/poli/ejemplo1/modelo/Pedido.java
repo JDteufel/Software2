@@ -7,6 +7,12 @@ public class Pedido {
 	public Pedido() {
 	}
 
+
+
+
+
+
+
 	
 	private String numero;
 

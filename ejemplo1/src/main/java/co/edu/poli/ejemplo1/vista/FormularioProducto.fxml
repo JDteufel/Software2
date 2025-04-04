@@ -25,41 +25,41 @@
             <Font size="14.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="selElec" layoutX="193.0" layoutY="178.0" mnemonicParsing="false" text="Eléctrico">
+      <RadioButton fx:id="selElec" layoutX="178.0" layoutY="177.0" mnemonicParsing="false" text="Eléctrico">
          <font>
             <Font size="14.0" />
          </font>
       </RadioButton>
       <TextField fx:id="txtCal" layoutX="15.0" layoutY="199.0" promptText="Aporte Calórico" />
-      <TextField fx:id="txtVolt" layoutX="193.0" layoutY="199.0" promptText="Voltaje de Entrada" />
-      <Button fx:id="bttGetId" layoutX="168.0" layoutY="560.0" mnemonicParsing="false" onAction="#bttGetId" text="Clonar" />
-      <TextField fx:id="txtId_CP" editable="false" layoutX="193.0" layoutY="116.0" promptText="ID Producto" />
-      <TextField fx:id="txtId_RP" layoutX="15.0" layoutY="326.0" promptText="ID Producto" />
-      <Button fx:id="btt_CP" layoutX="306.0" layoutY="233.0" mnemonicParsing="false" onAction="#create" prefHeight="25.0" prefWidth="31.0" text="ok" textFill="#00861f">
+      <TextField fx:id="txtVolt" layoutX="173.0" layoutY="199.0" promptText="Voltaje de Entrada" />
+      <Button fx:id="bttGetId" layoutX="581.0" layoutY="164.0" mnemonicParsing="false" onAction="#bttGetId" text="Clonar" />
+      <TextField fx:id="txtId_CP" layoutX="193.0" layoutY="116.0" promptText="ID Producto" />
+      <TextField fx:id="txtId_RP" layoutX="15.0" layoutY="295.0" promptText="ID Producto" />
+      <Button fx:id="btt_CP" layoutX="591.0" layoutY="116.0" mnemonicParsing="false" onAction="#create" prefHeight="25.0" prefWidth="31.0" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btt_RP" layoutX="178.0" layoutY="326.0" mnemonicParsing="false" onAction="#btt_RP" text="ok" textFill="#00861f">
+      <Button fx:id="btt_RP" layoutX="178.0" layoutY="295.0" mnemonicParsing="false" onAction="#read" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="txtId_UP" layoutX="193.0" layoutY="409.0" promptText="ID Producto" />
-      <TextField fx:id="txtNmbr_UP" layoutX="15.0" layoutY="409.0" promptText="Nombre Producto" />
-      <Button fx:id="btt_UP" layoutX="306.0" layoutY="441.0" mnemonicParsing="false" onAction="#btt_UP" text="ok" textFill="#00861f">
+      <TextField fx:id="txtId_UP" layoutX="173.0" layoutY="398.0" promptText="ID Producto" />
+      <TextField fx:id="txtNmbr_UP" layoutX="15.0" layoutY="398.0" promptText="Nombre Producto" />
+      <Button fx:id="btt_UP" layoutX="339.0" layoutY="398.0" mnemonicParsing="false" onAction="#btt_UP" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="txtId_DP" layoutX="378.0" layoutY="116.0" promptText="ID Producto" />
-      <Button fx:id="btt_DP" layoutX="540.0" layoutY="116.0" mnemonicParsing="false" onAction="#btt_DP" text="ok" textFill="#00861f">
+      <TextField fx:id="txtId_DP" layoutX="15.0" layoutY="491.0" promptText="ID Producto" />
+      <Button fx:id="btt_DP" layoutX="178.0" layoutY="491.0" mnemonicParsing="false" onAction="#btt_DP" text="ok" textFill="#00861f">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="bttAllP" layoutX="622.0" layoutY="186.0" mnemonicParsing="false" onAction="#bttAllP" text="Buscar" />
-      <TextField fx:id="txtAllP" layoutX="380.0" layoutY="233.0" prefHeight="352.0" prefWidth="294.0" />
+      <Button fx:id="bttAllP" layoutX="622.0" layoutY="260.0" mnemonicParsing="false" onAction="#bttAllP" text="Buscar" />
+      <TextField fx:id="txtAllP" layoutX="425.0" layoutY="288.0" prefHeight="297.0" prefWidth="249.0" />
       <Text layoutX="13.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos:">
          <font>
             <Font name="Impact" size="35.0" />
@@ -70,32 +70,32 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="14.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de Producto:">
+      <Text layoutX="14.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de Producto:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="9.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar Producto:">
+      <Text layoutX="15.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar Producto:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="10.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actualizar Producto:">
+      <Text layoutX="17.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actualizar Producto:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="380.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Producto:">
+      <Text layoutX="17.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Producto:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="420.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ver Lista de Productos:">
+      <Text layoutX="425.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ver Lista de Productos:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="bttcom" layoutX="269.0" layoutY="560.0" mnemonicParsing="false" onAction="#bttcom" text="Composite" />
+      <Button fx:id="bttcom" layoutX="173.0" layoutY="560.0" mnemonicParsing="false" onAction="#bttcom" text="Composite" />
       <Button fx:id="bttInicio" layoutX="36.0" layoutY="559.0" mnemonicParsing="false" onAction="#bttInicio" text="&lt;- Inicio" textFill="#ff992e">
          <font>
             <Font name="Impact" size="14.0" />
@@ -104,5 +104,6 @@
             <SepiaTone />
          </effect>
       </Button>
+      <TextField fx:id="txtPrecio" layoutX="370.0" layoutY="116.0" promptText="Precio Producto" />
    </children>
 </AnchorPane>

@@ -4,11 +4,16 @@ import java.sql.*;
 import java.util.*;
 import co.edu.poli.ejemplo1.modelo.Cliente;
 
-public class DAOimplementCliente implements DAO <Cliente , String>{
+public class DAOimplementCliente implements DAO<Cliente, String> {
 
 	private Connection conn;
+
 	public DAOimplementCliente() {
-		this.conn = Singleton.getInstance().conexionActiva();
+		try {
+			this.conn = Singleton.getInstance().conexionActiva();
+		} catch (SQLException e) {
+			throw new RuntimeException("Error al obtener la conexión activa: " + e.getMessage(), e);
+		}
 	}
 
 	@Override
