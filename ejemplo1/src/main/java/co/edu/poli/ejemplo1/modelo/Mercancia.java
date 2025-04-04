@@ -7,7 +7,7 @@ public abstract class Mercancia {
         this.envio = envio;
     }
 
-    protected void procesarEnvio(String tipoMercancia) {
+    public void procesarEnvio(String tipoMercancia) {
         envio.procesarEnvio(tipoMercancia);
     }
 
