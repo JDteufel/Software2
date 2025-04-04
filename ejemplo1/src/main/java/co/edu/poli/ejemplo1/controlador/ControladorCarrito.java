@@ -12,6 +12,7 @@ import co.edu.poli.ejemplo1.modelo.EnvioGratis;
 import co.edu.poli.ejemplo1.modelo.Descuento;
 import co.edu.poli.ejemplo1.modelo.Puntos;
 import co.edu.poli.ejemplo1.modelo.Carrito;
+import co.edu.poli.ejemplo1.modelo.CarritoVIP;
 
 public class ControladorCarrito {
 
@@ -19,10 +20,10 @@ public class ControladorCarrito {
     private Button bttFin, bttInicio, bttVer;
 
     @FXML
-    private RadioButton selDesc, selEnvio, selPunto;
+    private RadioButton selDesc, selEnvio, selPunto, selVIP;
 
     @FXML
-    private TextField txtCompra, txtDesc, txtPunto;
+    private TextField txtCompra, txtDesc, txtPunto, txtVIP;
 
     @FXML
     public void initialize() {
@@ -97,6 +98,20 @@ public class ControladorCarrito {
         } else {
             compra = new EnvioGratis(compra, 6000);
             detalles.append("- Envío: Con costo (6000)\n");
+        }
+
+        if (selVIP.isSelected()) {
+            String nombreUsuario = txtVIP.getText();
+            CarritoVIP carritoVIP = new CarritoVIP(compra, nombreUsuario);
+            compra = carritoVIP;
+
+            if (carritoVIP.esUsuarioVIP()) {
+                detalles.append("- Usuario VIP detectado: Prioridad en el envío.\n");
+            } else {
+                detalles.append("- Usuario no es VIP.\n");
+            }
+        } else {
+            detalles.append("- Usuario VIP no seleccionado.\n");
         }
 
         double total = compra.FinalizarCompra();
