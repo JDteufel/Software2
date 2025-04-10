@@ -7,7 +7,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo2.controlador.ControladorFacade">
    <children>
       <Text layoutX="14.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente">
@@ -20,26 +19,26 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="11.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id del Cliente:">
+      <Text layoutX="11.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID del Cliente:">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
       <TextField fx:id="txtClienteNombre" layoutX="11.0" layoutY="81.0" prefHeight="25.0" prefWidth="134.0" />
-      <TextField fx:id="txtClienteID" layoutX="14.0" layoutY="150.0" prefHeight="25.0" prefWidth="134.0" />
-      <Button fx:id="addCliente" layoutX="19.0" layoutY="200.0" mnemonicParsing="false" onAction="#AddCliente" text="Agregar" />
-      <Button fx:id="updateCliente" layoutX="89.0" layoutY="200.0" mnemonicParsing="false" onAction="#UpdateCliente" text="Actualizar" />
+      <TextField fx:id="txtClienteID" layoutX="11.0" layoutY="150.0" prefHeight="25.0" prefWidth="134.0" />
+      <Button fx:id="addCliente" layoutX="11.0" layoutY="188.0" mnemonicParsing="false" onAction="#AddCliente" text="Agregar" />
+      <Button fx:id="updateCliente" layoutX="75.0" layoutY="188.0" mnemonicParsing="false" onAction="#UpdateCliente" text="Actualizar" />
       <Text layoutX="218.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pedido">
          <font>
             <Font name="Corbel Bold" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="221.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion:">
+      <Text layoutX="221.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción:">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="221.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id del Producto:">
+      <Text layoutX="221.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID del Producto:">
          <font>
             <Font size="16.0" />
          </font>
@@ -62,8 +61,8 @@
       <Button fx:id="addPago" layoutX="463.0" layoutY="116.0" mnemonicParsing="false" onAction="#AddPago" text="Agregar" />
       <Button fx:id="activarPago" layoutX="548.0" layoutY="115.0" mnemonicParsing="false" onAction="#ActivarPago" text="Activar" />
       <Button fx:id="bloquearPago" layoutX="625.0" layoutY="115.0" mnemonicParsing="false" onAction="#BloquearPago" text="Bloquear" />
-      <ListView fx:id="listPago" layoutX="472.0" layoutY="172.0" prefHeight="214.0" prefWidth="210.0" />
+      <ListView fx:id="listPago" layoutX="472.0" layoutY="186.0" prefHeight="200.0" prefWidth="210.0" />
       <Button fx:id="resumen" layoutX="22.0" layoutY="279.0" mnemonicParsing="false" onAction="#Resumen" prefHeight="36.0" prefWidth="112.0" text="Resumen" />
-      <Button fx:id="back" layoutX="25.0" layoutY="335.0" mnemonicParsing="false" onAction="#Back" prefHeight="36.0" prefWidth="112.0" text="Atras" />
+      <Button fx:id="back" layoutX="22.0" layoutY="335.0" mnemonicParsing="false" onAction="#Back" prefHeight="36.0" prefWidth="112.0" text="Atrás" />
    </children>
 </AnchorPane>
