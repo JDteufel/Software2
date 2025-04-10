@@ -45,7 +45,40 @@ public class ControladorInicio {
 
     @FXML
     void facade(ActionEvent event) {
+    // Crear cliente desde la interfaz
+    Cliente cliente = new Cliente(txtIdC.getText(), txtNombre.getText());
 
+    // Crear fachada
+    InterfazCliente interfaz = new InterfazCliente(cliente);
+
+    // Actualizar nombre por si se quiere cambiar luego
+    interfaz.getInfoCliente().actualizarNombre(txtNombre.getText());
+
+    // Agregar pedido (producto)
+    Producto producto = new ProductoSimple(txtIdP.getText(), txtDescrip.getText());
+    interfaz.getHistorial().realizarPedido(producto);
+
+    // Agregar formas de pago
+    interfaz.getPagos().agregarFormaDePago("Tarjeta de crédito");
+    interfaz.getPagos().bloquearFormaDePago("Tarjeta de crédito");
+
+    // Mostrar resumen con alerta
+    StringBuilder mensaje = new StringBuilder();
+    mensaje.append("Cliente:\n").append(interfaz.getInfoCliente().mostrarInformacion()).append("\n\n");
+
+    mensaje.append("Pedidos:\n");
+    interfaz.getHistorial().verHistorial().forEach(p -> mensaje.append(p).append("\n"));
+
+    mensaje.append("Formas de pago:\n");
+    interfaz.getPagos().verFormasDePago().forEach((tipo, activa) -> {
+        mensaje.append(tipo).append(": ").append(activa ? "Activa" : "Bloqueada").append("\n");
+    });
+
+    Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+    alerta.setTitle("Demostración Facade");
+    alerta.setHeaderText("Patrón Facade: Gestión simplificada del cliente");
+    alerta.setContentText(mensaje.toString());
+    alerta.showAndWait();
     }
 
     @FXML
