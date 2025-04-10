@@ -22,4 +22,12 @@ public class Inventario {
     public List<Producto> getProductos() {
         return productos;
     }
+
+    public static Inventario inventarioBase() {
+        Inventario inv = new Inventario();
+        inv.agregarProducto("001", "Laptop", "TechCorp", "123456", "Calle 1");
+        inv.agregarProducto("002", "Mouse", "TechCorp", "123456", "Calle 1");
+        inv.agregarProducto("003", "Impresora", "PrintWorld", "789101", "Avenida 5");
+        return inv;
+    }
 }

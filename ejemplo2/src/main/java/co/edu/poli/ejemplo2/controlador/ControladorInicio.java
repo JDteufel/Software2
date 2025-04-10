@@ -22,13 +22,8 @@ public class ControladorInicio {
 
     @FXML
     void flyweight(ActionEvent event) {
-        // Creamos un inventario y agregamos productos
-        Inventario inventario = new Inventario();
-        inventario.agregarProducto("001", "Laptop", "TechCorp", "123456", "Calle 1");
-        inventario.agregarProducto("002", "Mouse", "TechCorp", "123456", "Calle 1");
-        inventario.agregarProducto("003", "Impresora", "PrintWorld", "789101", "Avenida 5");
+        Inventario inventario = Inventario.inventarioBase();
 
-        // Construimos el mensaje de salida
         StringBuilder mensaje = new StringBuilder();
         mensaje.append("Patrón Flyweight aplicado:\n\n");
 
@@ -36,7 +31,6 @@ public class ControladorInicio {
             mensaje.append(p.toString()).append("\n----------------------\n");
         });
 
-        // Mostramos el mensaje en un cuadro de alerta
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Demostración Flyweight");
         alerta.setHeaderText("Flyweight: Productos y Proveedores Compartidos");

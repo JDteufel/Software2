@@ -15,49 +15,14 @@ import javafx.scene.control.TextField;
 public class ControladorFacade {
 
     @FXML
-    private Button activarPago;
-
+    private Button activarPago, addCarrito, addCliente, back, resumen, addPago, bloquearPago, updateCliente;
+    
     @FXML
-    private Button addCarrito;
-
+    private ListView<String> listPago, listPedido;
+    
     @FXML
-    private Button addCliente;
-
-    @FXML
-    private Button back;
-
-    @FXML
-    private Button resumen;
-
-    @FXML
-    private Button addPago;
-
-    @FXML
-    private Button bloquearPago;
-
-    @FXML
-    private ListView<String> listPago;
-
-    @FXML
-    private ListView<String> listPedido;
-
-    @FXML
-    private TextField txtClienteID;
-
-    @FXML
-    private TextField txtClienteNombre;
-
-    @FXML
-    private TextField txtDescrip;
-
-    @FXML
-    private TextField txtIdP;
-
-    @FXML
-    private TextField txtNuevaFormaPago;
-
-    @FXML
-    private Button updateCliente;
+    private TextField txtClienteID, txtClienteNombre, txtDescrip, txtIdP, txtNuevaFormaPago;
+    
 
     private InterfazCliente interfaz;
 
