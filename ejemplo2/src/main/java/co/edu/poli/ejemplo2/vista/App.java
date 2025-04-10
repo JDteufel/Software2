@@ -15,18 +15,19 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        cambiarVista("FormularioInicio");
+        cambiarVista("formularioInicio");
         primaryStage.setTitle("Gestión de Clientes y Productos");
         primaryStage.show();
     }
 
     public static void cambiarVista(String fxml) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/co/edu/poli/ejemplo1/vista/" + fxml + ".fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/co/edu/poli/ejemplo2/vista/" + fxml + ".fxml"));
             Parent root = fxmlLoader.load();
             primaryStage.setScene(new Scene(root));
             primaryStage.centerOnScreen();
         } catch (IOException e) {
+            System.err.println("Error al cargar la vista: " + fxml + ".fxml. Verifica la ruta y el archivo.");
             e.printStackTrace();
         }
     }
