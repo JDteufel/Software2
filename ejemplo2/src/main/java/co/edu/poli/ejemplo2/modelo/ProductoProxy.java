@@ -7,9 +7,9 @@ public class ProductoProxy extends Producto {
     private String usuario;
     private List<ProductoSimple> productos;
 
-    public ProductoProxy(String id , String descripcion , String usuario) {
+    public ProductoProxy(String id, String descripcion, String usuario, List<ProductoSimple> productos) {
         super(id, descripcion);
-        this.productos = ProductoSimple.crearListaProductos(); 
+        this.productos = productos;
         this.usuario = usuario;
     }
 
@@ -37,5 +37,5 @@ public class ProductoProxy extends Producto {
         } else {
             return "Acceso denegado. Usuario no autorizado.";
         }
-    }  
+    }
 }

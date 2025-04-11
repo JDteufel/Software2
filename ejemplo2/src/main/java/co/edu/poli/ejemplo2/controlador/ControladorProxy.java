@@ -57,7 +57,8 @@ public class ControladorProxy {
 
         if (nivelUsuario == 3) {
             StringBuilder mensaje = new StringBuilder("Lista de productos:\n");
-            for (ProductoSimple producto : ProductoSimple.crearListaProductos()) {
+            ControladorInicio controladorInicio = new ControladorInicio();
+            for (ProductoSimple producto : controladorInicio.crearListaProductos()) {
                 mensaje.append(producto.toString()).append("\n");
             }
             mostrarAlerta("Acceso concedido", mensaje.toString());
