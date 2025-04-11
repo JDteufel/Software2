@@ -37,6 +37,5 @@ public class ProductoProxy extends Producto {
         } else {
             return "Acceso denegado. Usuario no autorizado.";
         }
-    }
-    
+    }  
 }
