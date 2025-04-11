@@ -1,6 +1,7 @@
 package co.edu.poli.ejemplo2.controlador;
 
 import co.edu.poli.ejemplo2.vista.App;
+import co.edu.poli.ejemplo2.modelo.ProductoSimple;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -34,6 +35,22 @@ public class ControladorProxy {
 
     @FXML
     void acceso(ActionEvent event) {
-        
+        String usuario = txtUsuario.getText();
+        if (usuario == null || usuario.isEmpty()) {
+            mostrarAlerta("Error", "El campo de usuario está vacío.");
+            return;
+        }
+
+        if ("Juan David Gómez Cárdenas".equals(usuario) || 
+            "Deivid Rodríguez Cruz".equals(usuario) || 
+            "Hillary Liv Rodríguez Sagbini".equals(usuario)) {
+            StringBuilder mensaje = new StringBuilder("Lista de productos:\n");
+            for (ProductoSimple producto : ProductoSimple.crearListaProductos()) {
+                mensaje.append(producto.toString()).append("\n");
+            }
+            mostrarAlerta("Acceso concedido", mensaje.toString());
+        } else {
+            mostrarAlerta("Acceso denegado", "Usuario no autorizado.");
+        }
     }
 }

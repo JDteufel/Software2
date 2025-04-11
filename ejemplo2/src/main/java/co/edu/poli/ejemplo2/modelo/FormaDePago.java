@@ -6,7 +6,7 @@ public class FormaDePago {
     private Map<String, Boolean> formasPago = new HashMap<>();
 
     public void agregarFormaDePago(String tipo) {
-        formasPago.put(tipo, true); // Por defecto activa
+        formasPago.put(tipo, true);
     }
 
     public void bloquearFormaDePago(String tipo) {

@@ -33,6 +33,9 @@ public class ControladorInicio {
 
         inventario.getProductos().forEach(p -> {
             mensaje.append(p.toString()).append("\n");
+            if (p.getProveedor() != null) {
+                mensaje.append("Proveedor: ").append(p.getProveedor().toString()).append("\n\n");
+            }
         });
 
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);

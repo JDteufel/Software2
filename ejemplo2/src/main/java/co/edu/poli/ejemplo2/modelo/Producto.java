@@ -3,6 +3,7 @@ package co.edu.poli.ejemplo2.modelo;
 public abstract class Producto {
     private String idProducto;
     private String descripcion;
+    private Proveedor proveedor;
 
     public Producto(String idProducto, String descripcion) {
         this.idProducto = idProducto;
@@ -30,11 +31,20 @@ public abstract class Producto {
         this.descripcion = descripcion;
     }
 
+    public Proveedor getProveedor() {
+        return proveedor;
+    }
+
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
+    }
+
     @Override
     public String toString() {
         return "Producto{" +
                 "id='" + idProducto + '\'' +
                 ", descripcion='" + descripcion + '\'' +
+                ", proveedor=" + (proveedor != null ? proveedor.toString() : "N/A") +
                 '}';
     }
 }
