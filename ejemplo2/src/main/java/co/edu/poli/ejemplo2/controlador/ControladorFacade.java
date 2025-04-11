@@ -15,10 +15,10 @@ public class ControladorFacade {
 
     @FXML
     private Button activarPago, addCarrito, addCliente, back, resumen, addPago, bloquearPago, updateCliente;
-    
+
     @FXML
     private ListView<String> listPago, listPedido;
-    
+
     @FXML
     private TextField txtClienteID, txtClienteNombre, txtDescrip, txtIdP, txtNuevaFormaPago, txtProxy;
     
@@ -137,19 +137,37 @@ public class ControladorFacade {
         });
     }
 
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+
+    @FXML
+    void Back(ActionEvent event) {
+        try {
+            App.cambiarVista("FormularioInicio");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
+        }
+    }
+
     @FXML
     void Resumen(ActionEvent event) {
         if (interfaz == null) {
             mostrarAlerta("Error", "Primero debes crear un cliente.");
             return;
         }
-    
+
         StringBuilder mensaje = new StringBuilder();
-    
+
         mensaje.append("Cliente:\n")
                .append(interfaz.getInfoCliente().mostrarInformacion())
                .append("\n\n");
-    
+
         mensaje.append("Pedidos:\n");
         if (interfaz.getHistorial().verHistorial().isEmpty()) {
             mensaje.append("Sin pedidos registrados.\n");
@@ -157,7 +175,7 @@ public class ControladorFacade {
             interfaz.getHistorial().verHistorial().forEach(p ->
                 mensaje.append("- ").append(p.toString()).append("\n"));
         }
-    
+
         mensaje.append("\nFormas de Pago:\n");
         if (interfaz.getPagos().verFormasDePago().isEmpty()) {
             mensaje.append("Sin formas de pago registradas.\n");
@@ -167,7 +185,7 @@ public class ControladorFacade {
                 mensaje.append("- ").append(tipo).append(": ").append(estado).append("\n");
             });
         }
-    
+
         mostrarAlerta("Resumen del Cliente", mensaje.toString());
     }
 }
