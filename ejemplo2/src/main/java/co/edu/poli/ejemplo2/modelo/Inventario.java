@@ -9,13 +9,17 @@ public class Inventario {
 
     public void agregarProducto(String idProducto, String descripcion, String Nombre, String contacto, String direccion) {
         Proveedor proveedor = ProveedorFactory.getProveedor(Nombre, contacto, direccion);
-        Producto producto = new Producto(idProducto, descripcion);
+        ProductoSimple producto = new ProductoSimple(idProducto, descripcion);
         productos.add(producto);
+    }
+
+    public void importarProductos(List<ProductoSimple> listaProductos) {
+        productos.addAll(listaProductos);
     }
 
     public void mostrarInventario() {
         for (Producto p : productos) {
-            p.toString();
+            System.out.println(p.toString());
         }
     }
 
@@ -25,9 +29,7 @@ public class Inventario {
 
     public static Inventario inventarioBase() {
         Inventario inv = new Inventario();
-        inv.agregarProducto("001", "Laptop", "TechCorp", "123456", "Calle 1");
-        inv.agregarProducto("002", "Mouse", "TechCorp", "123456", "Calle 1");
-        inv.agregarProducto("003", "Impresora", "PrintWorld", "789101", "Avenida 5");
+        inv.importarProductos(ProductoSimple.crearListaProductos());
         return inv;
     }
 }

@@ -2,65 +2,28 @@
 
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo2.controlador.ControladorInicio">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo2.controlador.ControladorInicio">
    <children>
-      <Text layoutX="32.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes:">
+      <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicio:">
          <font>
             <Font name="Corbel Bold" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="32.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="30.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial del Pedido">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <ListView fx:id="listPedidos" layoutX="30.0" layoutY="348.0" prefHeight="103.0" prefWidth="245.0" />
-      <Text layoutX="30.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id del Cliente:">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <TextField fx:id="txtNombre" layoutX="137.0" layoutY="241.0" prefHeight="25.0" prefWidth="134.0" />
-      <TextField fx:id="txtIdC" layoutX="137.0" layoutY="277.0" prefHeight="25.0" prefWidth="134.0" />
-      <Text layoutX="279.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos:">
-         <font>
-            <Font name="Corbel Bold" size="30.0" />
-         </font>
-      </Text>
-      <Text layoutX="307.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción:">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="309.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id del Producto:">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <TextField fx:id="txtDescrip" layoutX="433.0" layoutY="241.0" prefWidth="134.0" />
-      <TextField fx:id="txtIdP" layoutX="433.0" layoutY="277.0" prefWidth="134.0" />
-      <Button fx:id="proxy" layoutX="215.0" layoutY="46.0" mnemonicParsing="false" onAction="#proxy" prefHeight="35.0" prefWidth="163.0" text="Proxy">
+      <Button fx:id="proxy" layoutX="135.0" layoutY="73.0" mnemonicParsing="false" onAction="#proxy" prefHeight="35.0" prefWidth="163.0" text="Proxy">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="facade" layoutX="15.0" layoutY="46.0" mnemonicParsing="false" onAction="#facade" prefHeight="35.0" prefWidth="176.0" text="Facade">
+      <Button fx:id="facade" layoutX="128.0" layoutY="148.0" mnemonicParsing="false" onAction="#facade" prefHeight="35.0" prefWidth="176.0" text="Facade">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="flyweight" layoutX="404.0" layoutY="46.0" mnemonicParsing="false" onAction="#flyweight" prefHeight="35.0" prefWidth="163.0" text="Flyweight">
+      <Button fx:id="flyweight" layoutX="135.0" layoutY="220.0" mnemonicParsing="false" onAction="#flyweight" prefHeight="35.0" prefWidth="163.0" text="Flyweight">
          <font>
             <Font size="16.0" />
          </font>

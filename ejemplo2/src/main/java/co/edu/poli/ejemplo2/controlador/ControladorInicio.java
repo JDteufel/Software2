@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 
 public class ControladorInicio {
 
@@ -15,10 +14,15 @@ public class ControladorInicio {
     private ListView<String> listPedidos;
 
     @FXML
-    private TextField txtDescrip, txtIdC, txtIdP, txtNombre;
-
-    @FXML
     private Button facade, flyweight, proxy;
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
 
     @FXML
     void flyweight(ActionEvent event) {
@@ -28,7 +32,7 @@ public class ControladorInicio {
         mensaje.append("Patrón Flyweight aplicado:\n\n");
 
         inventario.getProductos().forEach(p -> {
-            mensaje.append(p.toString()).append("\n----------------------\n");
+            mensaje.append(p.toString()).append("\n");
         });
 
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -39,26 +43,22 @@ public class ControladorInicio {
     }
 
     @FXML
-void facade(ActionEvent event) {
+    void facade(ActionEvent event) {
         try {
             App.cambiarVista("FormularioFacade");
         } catch (Exception e) {
             e.printStackTrace();
-            mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
+            mostrarAlerta("Error", "No se pudo abrir el formulario de Facade.");
         }   
-}
-
-private void mostrarAlerta(String titulo, String mensaje) {
-    Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-    alerta.setTitle(titulo);
-    alerta.setHeaderText(null);
-    alerta.setContentText(mensaje);
-    alerta.showAndWait();
-}
+    }
 
     @FXML
     void proxy(ActionEvent event) {
-        
+        try {
+            App.cambiarVista("FormularioProxy");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de Proxy.");
+        }
     }
-
 }

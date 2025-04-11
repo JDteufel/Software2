@@ -4,7 +4,6 @@ import co.edu.poli.ejemplo2.modelo.Cliente;
 import co.edu.poli.ejemplo2.modelo.InterfazCliente;
 import co.edu.poli.ejemplo2.modelo.ProductoSimple;
 import co.edu.poli.ejemplo2.vista.App;
-import co.edu.poli.ejemplo2.modelo.Producto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -21,10 +20,28 @@ public class ControladorFacade {
     private ListView<String> listPago, listPedido;
     
     @FXML
-    private TextField txtClienteID, txtClienteNombre, txtDescrip, txtIdP, txtNuevaFormaPago;
+    private TextField txtClienteID, txtClienteNombre, txtDescrip, txtIdP, txtNuevaFormaPago, txtProxy;
     
 
     private InterfazCliente interfaz;
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+
+    @FXML
+    void Back(ActionEvent event) {
+        try {
+            App.cambiarVista("FormularioInicio");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
+        } 
+    }
 
     @FXML
     void AddCliente(ActionEvent event) {
@@ -68,7 +85,7 @@ public class ControladorFacade {
             return;
         }
 
-        Producto producto = new ProductoSimple(idProd, descripcion);
+        ProductoSimple producto = new ProductoSimple(idProd, descripcion);
         interfaz.getHistorial().realizarPedido(producto);
         listPedido.getItems().add(producto.toString());
     }
@@ -118,24 +135,6 @@ public class ControladorFacade {
             String estado = activa ? "Activa" : "Bloqueada";
             listPago.getItems().add(tipo + " - " + estado);
         });
-    }
-
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
-    }
-
-    @FXML
-    void Back(ActionEvent event) {
-        try {
-            App.cambiarVista("FormularioInicio");
-        } catch (Exception e) {
-            e.printStackTrace();
-            mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
-        } 
     }
 
     @FXML
