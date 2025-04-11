@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControladorInicio {
 
@@ -22,6 +24,16 @@ public class ControladorInicio {
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
+    }
+
+    public List<ProductoSimple> crearListaProductos() {
+        List<ProductoSimple> lista = new ArrayList<>();
+        lista.add(new ProductoSimple("001", "Laptop"));
+        lista.add(new ProductoSimple("002", "Mouse"));
+        lista.add(new ProductoSimple("003", "Impresora"));
+        lista.add(new ProductoSimple("004", "Teclado"));
+        lista.add(new ProductoSimple("005", "Monitor"));
+        return lista;
     }
 
     @FXML
