@@ -2,9 +2,8 @@ package co.edu.poli.ejemplo2.controlador;
 
 import co.edu.poli.ejemplo2.modelo.Cliente;
 import co.edu.poli.ejemplo2.modelo.InterfazCliente;
-import co.edu.poli.ejemplo2.modelo.ProductoSimple;
-import co.edu.poli.ejemplo2.vista.App;
 import co.edu.poli.ejemplo2.modelo.Producto;
+import co.edu.poli.ejemplo2.vista.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -16,13 +15,12 @@ public class ControladorFacade {
 
     @FXML
     private Button activarPago, addCarrito, addCliente, back, resumen, addPago, bloquearPago, updateCliente;
-    
+
     @FXML
     private ListView<String> listPago, listPedido;
-    
+
     @FXML
     private TextField txtClienteID, txtClienteNombre, txtDescrip, txtIdP, txtNuevaFormaPago;
-    
 
     private InterfazCliente interfaz;
 
@@ -68,7 +66,7 @@ public class ControladorFacade {
             return;
         }
 
-        Producto producto = new ProductoSimple(idProd, descripcion);
+        Producto producto = new Producto(idProd, descripcion);
         interfaz.getHistorial().realizarPedido(producto);
         listPedido.getItems().add(producto.toString());
     }
@@ -135,7 +133,7 @@ public class ControladorFacade {
         } catch (Exception e) {
             e.printStackTrace();
             mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
-        } 
+        }
     }
 
     @FXML
@@ -144,13 +142,13 @@ public class ControladorFacade {
             mostrarAlerta("Error", "Primero debes crear un cliente.");
             return;
         }
-    
+
         StringBuilder mensaje = new StringBuilder();
-    
+
         mensaje.append("Cliente:\n")
                .append(interfaz.getInfoCliente().mostrarInformacion())
                .append("\n\n");
-    
+
         mensaje.append("Pedidos:\n");
         if (interfaz.getHistorial().verHistorial().isEmpty()) {
             mensaje.append("Sin pedidos registrados.\n");
@@ -158,7 +156,7 @@ public class ControladorFacade {
             interfaz.getHistorial().verHistorial().forEach(p ->
                 mensaje.append("- ").append(p.toString()).append("\n"));
         }
-    
+
         mensaje.append("\nFormas de Pago:\n");
         if (interfaz.getPagos().verFormasDePago().isEmpty()) {
             mensaje.append("Sin formas de pago registradas.\n");
@@ -168,7 +166,7 @@ public class ControladorFacade {
                 mensaje.append("- ").append(tipo).append(": ").append(estado).append("\n");
             });
         }
-    
+
         mostrarAlerta("Resumen del Cliente", mensaje.toString());
     }
 }
