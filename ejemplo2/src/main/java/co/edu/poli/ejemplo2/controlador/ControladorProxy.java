@@ -41,14 +41,28 @@ public class ControladorProxy {
             return;
         }
 
-        if ("Juan David Gómez Cárdenas".equals(usuario) || 
-            "Deivid Rodríguez Cruz".equals(usuario) || 
-            "Hillary Liv Rodríguez Sagbini".equals(usuario)) {
+        int nivelUsuario;
+        switch (usuario) {
+            case "Juan David Gómez Cárdenas":
+            case "Deivid Rodríguez Cruz":
+            case "Hillary Liv Rodríguez Sagbini":
+                nivelUsuario = 3;
+                break;
+            case "Wilson Soto":
+                nivelUsuario = 2;
+                break;
+            default:
+                nivelUsuario = 0;
+        }
+
+        if (nivelUsuario == 3) {
             StringBuilder mensaje = new StringBuilder("Lista de productos:\n");
             for (ProductoSimple producto : ProductoSimple.crearListaProductos()) {
                 mensaje.append(producto.toString()).append("\n");
             }
             mostrarAlerta("Acceso concedido", mensaje.toString());
+        } else if (nivelUsuario == 2) {
+            mostrarAlerta("Acceso restringido", "Tu nivel de usuario no permite ver los productos.");
         } else {
             mostrarAlerta("Acceso denegado", "Usuario no autorizado.");
         }
