@@ -137,24 +137,6 @@ public class ControladorFacade {
         });
     }
 
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
-    }
-
-    @FXML
-    void Back(ActionEvent event) {
-        try {
-            App.cambiarVista("FormularioInicio");
-        } catch (Exception e) {
-            e.printStackTrace();
-            mostrarAlerta("Error", "No se pudo abrir el formulario de Cliente.");
-        }
-    }
-
     @FXML
     void Resumen(ActionEvent event) {
         if (interfaz == null) {
