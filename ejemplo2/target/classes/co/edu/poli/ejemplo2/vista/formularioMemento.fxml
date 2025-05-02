@@ -59,5 +59,6 @@
       <RadioButton fx:id="rbtSuscripcion" layoutX="526.0" layoutY="74.0" mnemonicParsing="false" onAction="#rbtSuscripcion" text="Suscribirse" />
       <Button fx:id="bttCliente" layoutX="617.0" layoutY="70.0" mnemonicParsing="false" onAction="#bttCliente" text="OK" />
       <Button fx:id="volver" layoutX="258.0" layoutY="253.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+      <Button fx:id="bbtano" layoutX="265.0" layoutY="70.0" mnemonicParsing="false" onAction="#bttano" text="Año" />
    </children>
 </AnchorPane>

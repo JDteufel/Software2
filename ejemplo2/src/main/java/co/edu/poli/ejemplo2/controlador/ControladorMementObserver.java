@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
 
 public class ControladorMementObserver {
     @FXML
-    private Button bttCambio, bttCrear, bttVerHist, bttCliente, volver;
+    private Button bttCambio, bttCrear, bttVerHist, bttCliente, volver, bbtano;
 
     @FXML
     private TextField txtDescripcion, txtId, txtIdCambio, txtIdHist, txtPrecio, txtPrecioCambio, txtDescuento, txtCliente;
@@ -256,6 +256,45 @@ public class ControladorMementObserver {
     @FXML
     void volver(ActionEvent event) {
         restoreState();
+    }
+
+    private int currentYear = 2025;
+
+    @FXML
+    void bttano(ActionEvent event) {
+        String id = txtIdCambio.getText().trim();
+
+        if (id.isEmpty()) {
+            mostrarError("Debes ingresar el ID del producto.");
+            return;
+        }
+
+        Producto producto = CatalogoProductos.getProducto(id);
+
+        if (producto == null) {
+            mostrarError("No se encontró un producto con ID: " + id);
+            return;
+        }
+
+        // Ensure the original price is saved in the history
+        List<Double> historial = MementoPrecio.getHistorialPrecios(id);
+        if (historial.isEmpty()) {
+            MementoPrecio.guardarEstado(producto, producto.getPrecio());
+        }
+
+        double precioOriginal = historial.get(0); // Retrieve the original price
+        double nuevoPrecio = precioOriginal * Math.pow(1.03, currentYear - 2025 + 1); // Apply 3% increase per year
+
+        MementoPrecio.guardarEstado(producto, producto.getPrecio()); // Save current state
+        producto.setPrecio(nuevoPrecio);
+
+        currentYear++; // Increment the year
+
+        String mensaje = String.format(
+            "Se avanzó un año al %d.\nNuevo precio del producto con ID: %s es $%.2f",
+            currentYear, id, nuevoPrecio
+        );
+        mostrarConfirmacion(mensaje);
     }
 
 }
