@@ -3,6 +3,7 @@ module co.edu.poli.ejemplo1 {
 	requires java.sql;
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.base;
 
 
     opens co.edu.poli.ejemplo2.vista to javafx.fxml;

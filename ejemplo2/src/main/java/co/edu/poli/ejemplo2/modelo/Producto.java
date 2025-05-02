@@ -3,10 +3,9 @@ package co.edu.poli.ejemplo2.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Producto {
+public class Producto {
     private String idProducto;
     private String descripcion;
-    private Proveedor proveedor;
     private double precio;
     private List<MementoPrecio> historialPrecios = new ArrayList<>();
 
@@ -36,14 +35,6 @@ public abstract class Producto {
         this.descripcion = descripcion;
     }
 
-    public Proveedor getProveedor() {
-        return proveedor;
-    }
-
-    public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
-    }
-
     public void setPrecio(double nuevoPrecio) {
         guardarEstado(); // antes de cambiarlo
         this.precio = nuevoPrecio;
@@ -51,6 +42,14 @@ public abstract class Producto {
     
     public double getPrecio() {
         return precio;
+    }
+
+    public List<Double> getHistorialPrecios() {
+        List<Double> historial = new ArrayList<>();
+        for (MementoPrecio m : historialPrecios) {
+            historial.add(m.getPrecioGuardado());
+        }
+        return historial;
     }
     
     public void guardarEstado() {
@@ -68,8 +67,7 @@ public abstract class Producto {
 
     @Override
     public String toString() {
-        return "Producto [idProducto=" + idProducto + ", descripcion=" + descripcion + ", proveedor=" + proveedor
-       + ", precio=" + precio + "]";
+        return "Producto [idProducto=" + idProducto + ", descripcion=" + descripcion + ", precio=" + precio + "]";
 
     }
 

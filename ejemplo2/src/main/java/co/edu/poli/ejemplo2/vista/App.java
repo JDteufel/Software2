@@ -15,8 +15,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        cambiarVista("formularioInicio");
-        primaryStage.setTitle("Gestión de Clientes y Productos");
+        cambiarVista("formularioMemento");
+        primaryStage.setTitle("Gestión de Suscriptores y Productos");
         primaryStage.show();
     }
 
