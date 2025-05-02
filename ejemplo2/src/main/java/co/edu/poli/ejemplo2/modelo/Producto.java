@@ -1,13 +1,9 @@
 package co.edu.poli.ejemplo2.modelo;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Producto{
+public class Producto {
     private String idProducto;
     private String descripcion;
     private double precio;
-    private List<MementoPrecio> historialPrecios = new ArrayList<>();
 
     public Producto(String idProducto, String descripcion) {
         this.idProducto = idProducto;
@@ -36,33 +32,12 @@ public class Producto{
     }
 
     public void setPrecio(double nuevoPrecio) {
-        guardarEstado();
+        MementoPrecio.guardarEstado(this, precio); // Save state before updating price
         this.precio = nuevoPrecio;
     }
 
     public double getPrecio() {
         return precio;
-    }
-
-    public List<Double> getHistorialPrecios() {
-        List<Double> historial = new ArrayList<>();
-        for (MementoPrecio m : historialPrecios) {
-            historial.add(m.getPrecioGuardado());
-        }
-        return historial;
-    }
-
-    public void guardarEstado() {
-        historialPrecios.add(new MementoPrecio(precio));
-    }
-
-    public boolean deshacerCambioPrecio() {
-        if (!historialPrecios.isEmpty()) {
-            MementoPrecio memento = historialPrecios.remove(historialPrecios.size() - 1);
-            this.precio = memento.getPrecioGuardado();
-            return true;
-        }
-        return false;
     }
 
     public void aplicarDescuento(double descuento) {

@@ -110,7 +110,7 @@ public class ControladorMementObserver {
             return;
         }
 
-        List<Double> historial = producto.getHistorialPrecios();
+        List<Double> historial = MementoPrecio.getHistorialPrecios(id);
         StringBuilder mensaje = new StringBuilder("Precios del producto " + id + ":\n");
         mensaje.append("Precio actual: $").append(producto.getPrecio()).append("\n");
 
@@ -255,7 +255,7 @@ public class ControladorMementObserver {
 
     @FXML
     void volver(ActionEvent event) {
-        restoreState(); // Restore the previous state
+        restoreState();
     }
 
 }
