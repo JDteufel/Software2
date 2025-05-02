@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CatalogoProductos {
-    private static Map<String, Producto> productos = new HashMap<>();
+    private static Map<String , Producto> productos = new HashMap<>();
 
     public static void agregarProducto(Producto producto) {
         productos.put(producto.getIdProducto(), producto);

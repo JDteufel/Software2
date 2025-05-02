@@ -3,7 +3,7 @@ package co.edu.poli.ejemplo2.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Producto {
+public class Producto{
     private String idProducto;
     private String descripcion;
     private double precio;
@@ -36,10 +36,10 @@ public class Producto {
     }
 
     public void setPrecio(double nuevoPrecio) {
-        guardarEstado(); // antes de cambiarlo
+        guardarEstado();
         this.precio = nuevoPrecio;
     }
-    
+
     public double getPrecio() {
         return precio;
     }
@@ -51,11 +51,11 @@ public class Producto {
         }
         return historial;
     }
-    
+
     public void guardarEstado() {
         historialPrecios.add(new MementoPrecio(precio));
     }
-    
+
     public boolean deshacerCambioPrecio() {
         if (!historialPrecios.isEmpty()) {
             MementoPrecio memento = historialPrecios.remove(historialPrecios.size() - 1);
@@ -65,11 +65,13 @@ public class Producto {
         return false;
     }
 
+    public void aplicarDescuento(double descuento) {
+        double nuevoPrecio = this.precio - (this.precio * descuento / 100);
+        setPrecio(nuevoPrecio);
+    }
+
     @Override
     public String toString() {
         return "Producto [idProducto=" + idProducto + ", descripcion=" + descripcion + ", precio=" + precio + "]";
-
     }
-
-    
 }
