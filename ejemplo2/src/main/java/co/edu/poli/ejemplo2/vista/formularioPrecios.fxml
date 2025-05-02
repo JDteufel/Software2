@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo2.controlador.ControladorPrecios">
+   <children>
+      <Button fx:id="Cambiar" layoutX="368.0" layoutY="144.0" mnemonicParsing="false" onAction="#cambiar" prefHeight="33.0" prefWidth="88.0" text="Cambiar" />
+      <Text layoutX="383.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
+      <Text layoutX="383.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuevo Precio:" />
+      <TextField fx:id="ID" layoutX="368.0" layoutY="54.0" prefHeight="25.0" prefWidth="122.0" />
+      <TextField fx:id="Precio" layoutX="368.0" layoutY="107.0" prefHeight="25.0" prefWidth="122.0" />
+      <Button fx:id="Volver" layoutX="472.0" layoutY="144.0" mnemonicParsing="false" onAction="#volver" prefHeight="33.0" prefWidth="88.0" text="Desahacer" />
+      <TextArea fx:id="Productos" layoutX="23.0" layoutY="66.0" prefHeight="317.0" prefWidth="308.0" />
+      <Text layoutX="30.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos:" />
+      <Button fx:id="Lista" layoutX="133.0" layoutY="21.0" mnemonicParsing="false" onAction="#Lista" prefHeight="33.0" prefWidth="88.0" text="Ver Lista" />
+   </children>
+</AnchorPane>

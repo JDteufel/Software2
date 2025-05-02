@@ -76,4 +76,14 @@ public class ControladorInicio {
             mostrarAlerta("Error", "No se pudo abrir el formulario de Proxy.");
         }
     }
+
+    @FXML
+    void Precios(ActionEvent event) {
+        try {
+            App.cambiarVista("formularioPrecios");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo abrir el formulario de Precios.");
+        }
+    }
 }
