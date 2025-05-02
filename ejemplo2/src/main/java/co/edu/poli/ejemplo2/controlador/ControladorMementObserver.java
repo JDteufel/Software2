@@ -1,11 +1,15 @@
 package co.edu.poli.ejemplo2.controlador;
 
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Stack;
 
 import co.edu.poli.ejemplo2.modelo.CatalogoProductos;
 import co.edu.poli.ejemplo2.modelo.Producto;
 import co.edu.poli.ejemplo2.modelo.Cliente;
 import co.edu.poli.ejemplo2.modelo.Gestor;
+import co.edu.poli.ejemplo2.modelo.MementoPrecio;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -16,7 +20,7 @@ import javafx.scene.control.TextField;
 
 public class ControladorMementObserver {
     @FXML
-    private Button bttCambio, bttCrear, bttVerHist, bttCliente;
+    private Button bttCambio, bttCrear, bttVerHist, bttCliente, volver;
 
     @FXML
     private TextField txtDescripcion, txtId, txtIdCambio, txtIdHist, txtPrecio, txtPrecioCambio, txtDescuento, txtCliente;
@@ -26,8 +30,42 @@ public class ControladorMementObserver {
 
     private Gestor gestor = new Gestor();
 
+    private Stack<Map<String, MementoPrecio>> mementos = new Stack<>();
+
+    private void saveState() {
+        Map<String, MementoPrecio> snapshot = new HashMap<>();
+        CatalogoProductos.getTodos().forEach((id, producto) -> {
+            snapshot.put(id, new MementoPrecio(producto.getPrecio()));
+        });
+        mementos.push(snapshot);
+    }
+
+    private void restoreState() {
+        if (!mementos.isEmpty()) {
+            Map<String, MementoPrecio> snapshot = mementos.pop();
+            StringBuilder mensaje = new StringBuilder("Estado restaurado correctamente.\nCambios de precios:\n");
+
+            snapshot.forEach((id, memento) -> {
+                Producto producto = CatalogoProductos.getProducto(id);
+                if (producto != null) {
+                    double precioActual = producto.getPrecio();
+                    double precioAnterior = memento.getPrecioGuardado();
+                    producto.setPrecio(precioAnterior);
+                    mensaje.append(" - Producto ID: ").append(id)
+                           .append(", Precio actual: $").append(precioActual)
+                           .append(" -> Precio restaurado: $").append(precioAnterior).append("\n");
+                }
+            });
+
+            mostrarConfirmacion(mensaje.toString());
+        } else {
+            mostrarError("No hay estados previos para restaurar.");
+        }
+    }
+
     @FXML
     void bttCrear(ActionEvent event) {
+        saveState(); // Save state before creating a new product
         try {
             String id = txtId.getText().trim();
             String descripcion = txtDescripcion.getText().trim();
@@ -91,6 +129,7 @@ public class ControladorMementObserver {
 
     @FXML
     void bttCambio(ActionEvent event) {
+        saveState(); // Save state before changing a product's price
         String id = txtIdCambio.getText().trim();
         String nuevoPrecioTexto = txtPrecioCambio.getText().trim();
 
@@ -179,7 +218,7 @@ public class ControladorMementObserver {
                 producto.aplicarDescuento(descuento);
             });
 
-            List<String> notificaciones = gestor.notifyClientes("Se aplicó un descuento del " + descuento + "% a todos los productos.");
+            List<String> notificaciones = gestor.notifyClientes("Se aplicó un descuento del " + descuento + "% a todos los producto.");
             StringBuilder mensaje = new StringBuilder("Descuento aplicado correctamente.\n");
             mensaje.append("Notificaciones enviadas:\n");
             for (String notificacion : notificaciones) {
@@ -212,6 +251,11 @@ public class ControladorMementObserver {
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
+    }
+
+    @FXML
+    void volver(ActionEvent event) {
+        restoreState(); // Restore the previous state
     }
 
 }
