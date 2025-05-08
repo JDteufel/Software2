@@ -8,6 +8,9 @@ import javafx.scene.control.Button;
 
 public class ControladorComm {
 
+    @FXML
+    private Button bttAtras;
+
     private void cambiarVista(String vista) {
         System.out.println("Intentando abrir la vista: " + vista);
         try {
@@ -25,5 +28,10 @@ public class ControladorComm {
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
+    }
+
+    @FXML
+    void bttAtras(ActionEvent event) {
+        cambiarVista("FormularioInicio");
     }
 }
