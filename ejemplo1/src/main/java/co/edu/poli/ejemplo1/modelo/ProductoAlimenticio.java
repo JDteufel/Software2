@@ -1,6 +1,6 @@
 package co.edu.poli.ejemplo1.modelo;
 
-public class ProductoAlimenticio extends Producto implements Prototype {
+public class ProductoAlimenticio extends Producto{
     private String aporteCalorico;
 
     public ProductoAlimenticio(String idProducto, String tipo, String descripcion, double precio, String aporteCalorico) {
@@ -24,10 +24,5 @@ public class ProductoAlimenticio extends Producto implements Prototype {
     @Override
     public String toString() {
         return super.toString() + ", aporteCalorico='" + aporteCalorico + '\'';
-    }
-
-    @Override
-    public Prototype Clone() {
-        return new ProductoAlimenticio(this);
     }
 }

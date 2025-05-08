@@ -1,6 +1,6 @@
 package co.edu.poli.ejemplo1.modelo;
 
-public class ProductoElectrico extends Producto implements Prototype {
+public class ProductoElectrico extends Producto{
     private String voltajeEntrada;
 
     public ProductoElectrico(String idProducto, String tipo, String descripcion, double precio, String voltajeEntrada) {
@@ -24,10 +24,5 @@ public class ProductoElectrico extends Producto implements Prototype {
     @Override
     public String toString() {
         return super.toString() + ", voltajeEntrada='" + voltajeEntrada + '\'';
-    }
-
-    @Override
-    public Prototype Clone() {
-        return new ProductoElectrico(this);
     }
 }

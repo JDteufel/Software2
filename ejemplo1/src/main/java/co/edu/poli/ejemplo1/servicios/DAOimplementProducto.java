@@ -6,7 +6,7 @@ import co.edu.poli.ejemplo1.modelo.Producto;
 import co.edu.poli.ejemplo1.modelo.ProductoAlimenticio;
 import co.edu.poli.ejemplo1.modelo.ProductoElectrico;
 
-public class DAOimplementProducto implements ConsultaEsp<Producto, String> {
+public class DAOimplementProducto implements DAO<Producto, String> {
 
     private Connection conn;
 
