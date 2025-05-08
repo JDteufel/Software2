@@ -23,6 +23,6 @@ public class ProductoElectrico extends Producto{
 
     @Override
     public String toString() {
-        return super.toString() + ", voltajeEntrada='" + voltajeEntrada + '\'';
+        return super.toString() + ", voltajeEntrada='" + voltajeEntrada;
     }
 }

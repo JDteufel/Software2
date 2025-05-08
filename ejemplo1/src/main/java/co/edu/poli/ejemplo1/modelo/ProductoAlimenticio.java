@@ -23,6 +23,6 @@ public class ProductoAlimenticio extends Producto{
 
     @Override
     public String toString() {
-        return super.toString() + ", aporteCalorico='" + aporteCalorico + '\'';
+        return super.toString() + ", aporteCalorico='" + aporteCalorico ;
     }
 }
