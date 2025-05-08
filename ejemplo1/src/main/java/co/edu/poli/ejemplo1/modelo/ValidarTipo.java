@@ -2,7 +2,7 @@ package co.edu.poli.ejemplo1.modelo;
 
 public class ValidarTipo extends ManejadorProducto {
     @Override
-    protected boolean puedeProcesar(Producto producto) {
+    public boolean puedeProcesar(Producto producto) {
         String tipo = producto.getTipo();
 
         if ("Alimenticio".equalsIgnoreCase(tipo)) {

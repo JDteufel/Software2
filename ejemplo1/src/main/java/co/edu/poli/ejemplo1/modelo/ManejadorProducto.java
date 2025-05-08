@@ -7,11 +7,15 @@ public abstract class ManejadorProducto {
         this.siguiente = siguiente;
     }
 
+    public ManejadorProducto getSiguiente() {
+        return siguiente;
+    }
+
     public void procesar(Producto producto) {
         if (puedeProcesar(producto) && siguiente != null) {
             siguiente.procesar(producto);
         }
     }
 
-    protected abstract boolean puedeProcesar(Producto producto);
+    public abstract boolean puedeProcesar(Producto producto);
 }
