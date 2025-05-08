@@ -1,6 +1,6 @@
 package co.edu.poli.ejemplo1.modelo;
 
-public abstract class Producto {
+public class Producto {
     private String idProducto;
     private String tipo;
     private String descripcion;
