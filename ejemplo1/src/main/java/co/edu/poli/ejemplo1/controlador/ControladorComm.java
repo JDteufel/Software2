@@ -44,44 +44,6 @@ public class ControladorComm {
         electricos.getItems().addAll(p2, p4, p6);
     }
 
-    @FXML
-    void agregar(ActionEvent event) {
-        Producto seleccionado = comida.getValue() != null ? comida.getValue() : electricos.getValue();
-        if (seleccionado != null) {
-            Comando cmd = new AgregarProductoComando(pedido, seleccionado);
-            gestor.ejecutarComando(cmd);
-            actualizarTextArea();
-            comida.getSelectionModel().clearSelection();
-            electricos.getSelectionModel().clearSelection();
-        } else {
-            mostrarAlerta("Selecciona un producto", "Debes seleccionar un producto para agregar.");
-        }
-    }
-    
-
-    @FXML
-    void eliminar(ActionEvent event) {
-        Producto seleccionado = comida.getValue() != null ? comida.getValue() : electricos.getValue();
-        if (seleccionado != null && pedido.getProducto().contains(seleccionado)) {
-            Comando cmd = new EliminarProductoComando(pedido, seleccionado);
-            gestor.ejecutarComando(cmd);
-            actualizarTextArea();
-            comida.getSelectionModel().clearSelection();
-            electricos.getSelectionModel().clearSelection();
-        } else {
-            mostrarAlerta("Producto no encontrado", "El producto no está en el pedido.");
-        }
-    }
-    
-
-    private void actualizarTextArea() {
-        StringBuilder contenido = new StringBuilder("Productos en el pedido:\n");
-        for (Producto p : pedido.getProducto()) {
-            contenido.append(p.toString()).append("\n");
-        }
-        textarea.setText(contenido.toString());
-    }
-
     private void cambiarVista(String vista) {
         System.out.println("Intentando abrir la vista: " + vista);
         try {
@@ -104,5 +66,42 @@ public class ControladorComm {
     @FXML
     void bttAtras(ActionEvent event) {
         cambiarVista("FormularioInicio");
+    }
+
+    @FXML
+    void agregar(ActionEvent event) {
+        Producto seleccionado = comida.getValue() != null ? comida.getValue() : electricos.getValue();
+        if (seleccionado != null) {
+            Comando cmd = new AgregarProductoComando(pedido, seleccionado);
+            gestor.ejecutarComando(cmd);
+            actualizarTextArea();
+            comida.getSelectionModel().clearSelection();
+            electricos.getSelectionModel().clearSelection();
+        } else {
+            mostrarAlerta("Selecciona un producto", "Debes seleccionar un producto para agregar.");
+        }
+    }
+
+    @FXML
+    void eliminar(ActionEvent event) {
+        Producto seleccionado = comida.getValue() != null ? comida.getValue() : electricos.getValue();
+        if (seleccionado != null && pedido.getProducto().contains(seleccionado)) {
+            Comando cmd = new EliminarProductoComando(pedido, seleccionado);
+            gestor.ejecutarComando(cmd);
+            actualizarTextArea();
+            comida.getSelectionModel().clearSelection();
+            electricos.getSelectionModel().clearSelection();
+        } else {
+            mostrarAlerta("Producto no encontrado", "El producto no está en el pedido.");
+        }
+    }
+    
+
+    private void actualizarTextArea() {
+        StringBuilder contenido = new StringBuilder("Productos en el pedido:\n");
+        for (Producto p : pedido.getProducto()) {
+            contenido.append(p.toString()).append("\n");
+        }
+        textarea.setText(contenido.toString());
     }
 }
