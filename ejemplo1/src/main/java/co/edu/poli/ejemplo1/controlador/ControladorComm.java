@@ -6,10 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
-public class ControladorInicio {
-
-    @FXML
-    private Button bttCoR, bttStrat, bttComm;
+public class ControladorComm {
 
     private void cambiarVista(String vista) {
         System.out.println("Intentando abrir la vista: " + vista);
@@ -28,20 +25,5 @@ public class ControladorInicio {
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
-    }
-
-    @FXML
-    void bttCoR(ActionEvent event) {
-        cambiarVista("FormularioCoR");
-    }
-
-    @FXML
-    void bttStrat(ActionEvent event) {
-        cambiarVista("FormularioStrat");
-    }
-
-    @FXML
-    void bttComm(ActionEvent event) {
-        cambiarVista("FormularioComm");
     }
 }
