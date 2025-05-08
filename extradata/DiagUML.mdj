@@ -5326,7 +5326,7 @@
 											"top": 343,
 											"width": 211.29150390625,
 											"height": 13,
-											"text": "ValidarNombre"
+											"text": "ValidarDescripcion"
 										},
 										{
 											"_type": "LabelView",
@@ -10859,7 +10859,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGVD5X632tNJ0w="
 									},
-									"name": "ValidarNombre",
+									"name": "ValidarDescripcion",
 									"ownedElements": [
 										{
 											"_type": "UMLGeneralization",
