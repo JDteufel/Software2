@@ -8,6 +8,6 @@ public class GestorComandos {
 
     public void ejecutarComando(Comando comando) {
         comando.ejecutar();
-        historial.add(comando); // Podrías usarlo para deshacer más adelante
+        historial.add(comando);
     }
 }
