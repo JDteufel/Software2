@@ -5324,7 +5324,7 @@
 											"parentStyle": true,
 											"left": 1405,
 											"top": 343,
-											"width": 211.29150390625,
+											"width": 211.6533203125,
 											"height": 13,
 											"text": "ValidarDescripcion"
 										},
@@ -5365,7 +5365,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 336,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGWrg31O3rLgKI="
@@ -5394,7 +5394,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 361,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 10
 								},
 								{
@@ -5421,9 +5421,9 @@
 											"parentStyle": true,
 											"left": 1405,
 											"top": 376,
-											"width": 211.29150390625,
+											"width": 211.6533203125,
 											"height": 13,
-											"text": "#puedeProcesar(Producto producto)",
+											"text": "+puedeProcesar(Producto producto)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -5432,7 +5432,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 371,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 23
 								},
 								{
@@ -5481,7 +5481,7 @@
 							"containerChangeable": true,
 							"left": 1400,
 							"top": 336,
-							"width": 220.29150390625,
+							"width": 220.6533203125,
 							"height": 58,
 							"nameCompartment": {
 								"$ref": "AAAAAAGWrg31O3rKKTY="
@@ -5544,7 +5544,7 @@
 											"parentStyle": true,
 											"left": 1405,
 											"top": 255,
-											"width": 211.29150390625,
+											"width": 211.6533203125,
 											"height": 13,
 											"text": "ValidarTipo"
 										},
@@ -5585,7 +5585,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 248,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGWrhGSm4IiBV4="
@@ -5614,7 +5614,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 273,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 10
 								},
 								{
@@ -5641,9 +5641,9 @@
 											"parentStyle": true,
 											"left": 1405,
 											"top": 288,
-											"width": 211.29150390625,
+											"width": 211.6533203125,
 											"height": 13,
-											"text": "#puedeProcesar(Producto producto)",
+											"text": "+puedeProcesar(Producto producto)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -5652,7 +5652,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 283,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 23
 								},
 								{
@@ -5701,7 +5701,7 @@
 							"containerChangeable": true,
 							"left": 1400,
 							"top": 248,
-							"width": 220.29150390625,
+							"width": 220.6533203125,
 							"height": 58,
 							"nameCompartment": {
 								"$ref": "AAAAAAGWrhGSm4Ih1UA="
@@ -5764,7 +5764,7 @@
 											"parentStyle": true,
 											"left": 1405,
 											"top": 167,
-											"width": 211.29150390625,
+											"width": 211.6533203125,
 											"height": 13,
 											"text": "ValidarPrecio"
 										},
@@ -5805,7 +5805,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 160,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGWrhCd+X+2nHM="
@@ -5834,7 +5834,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 185,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 10
 								},
 								{
@@ -5861,9 +5861,9 @@
 											"parentStyle": true,
 											"left": 1405,
 											"top": 200,
-											"width": 211.29150390625,
+											"width": 211.6533203125,
 											"height": 13,
-											"text": "#puedeProcesar(Producto producto)",
+											"text": "+puedeProcesar(Producto producto)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -5872,7 +5872,7 @@
 									"parentStyle": true,
 									"left": 1400,
 									"top": 195,
-									"width": 221.29150390625,
+									"width": 221.6533203125,
 									"height": 23
 								},
 								{
@@ -5921,7 +5921,7 @@
 							"containerChangeable": true,
 							"left": 1400,
 							"top": 160,
-							"width": 220.29150390625,
+							"width": 220.6533203125,
 							"height": 58,
 							"nameCompartment": {
 								"$ref": "AAAAAAGWrhCd+X+1ONU="
@@ -9113,7 +9113,7 @@
 											"top": 254,
 											"width": 257.90869140625,
 											"height": 13,
-											"text": "#ManejadorProducto: siguiente",
+											"text": "+ManejadorProducto: siguiente",
 											"horizontalAlignment": 0
 										}
 									],
@@ -10883,7 +10883,6 @@
 												"$ref": "AAAAAAGWrg31O3rHjII="
 											},
 											"name": "puedeProcesar",
-											"visibility": "protected",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -10928,7 +10927,6 @@
 												"$ref": "AAAAAAGWrhGSmoIerhk="
 											},
 											"name": "puedeProcesar",
-											"visibility": "protected",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -10973,7 +10971,6 @@
 												"$ref": "AAAAAAGWrhCd+X+y/rU="
 											},
 											"name": "puedeProcesar",
-											"visibility": "protected",
 											"parameters": [
 												{
 													"_type": "UMLParameter",
@@ -11338,7 +11335,6 @@
 												"$ref": "AAAAAAGWrfVgoXIVLuo="
 											},
 											"name": "ManejadorProducto",
-											"visibility": "protected",
 											"type": "siguiente"
 										}
 									],
