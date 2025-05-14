@@ -1,10 +1,10 @@
 package co.edu.poli.ejemplo1.modelo;
 
-public class Contexto {
+public class ContextoStrategy {
     private Cliente cliente;
     private Strategy strategy;
 
-    public Contexto(Cliente cliente) {
+    public ContextoStrategy(Cliente cliente) {
         this.cliente = cliente;
     }
 
