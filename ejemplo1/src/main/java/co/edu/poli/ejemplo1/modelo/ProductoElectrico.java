@@ -22,6 +22,11 @@ public class ProductoElectrico extends Producto{
     }
 
     @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    @Override
     public String toString() {
         return super.toString() + ", voltajeEntrada='" + voltajeEntrada;
     }

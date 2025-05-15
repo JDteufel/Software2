@@ -1,6 +1,6 @@
 package co.edu.poli.ejemplo1.modelo;
 
-public class Producto {
+public abstract class Producto implements Element {
     private String idProducto;
     private String tipo;
     private String descripcion;
