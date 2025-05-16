@@ -32,5 +32,10 @@
             <Font name="Yu Gothic Bold" size="24.0" />
          </font>
       </Button>
+      <Button fx:id="bttState" layoutX="404.0" layoutY="304.0" mnemonicParsing="false" onAction="#bttState" text="State">
+         <font>
+            <Font name="Yu Gothic Bold" size="24.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

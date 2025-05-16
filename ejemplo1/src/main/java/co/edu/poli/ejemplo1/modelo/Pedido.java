@@ -5,12 +5,13 @@ import java.util.List;
 
 public class Pedido {
 	private String numero;
-	private String fecha;
 	private Cliente cliente;
 	private List<Producto> producto;
+	private EstadoPedido estado;
 
 	public Pedido() {
 		producto = new ArrayList<>();
+		this.estado = new EstadoNuevo(this);
 	}
 
 	public String getNumero() {
@@ -19,14 +20,6 @@ public class Pedido {
 
 	public void setNumero(String numero) {
 		this.numero = numero;
-	}
-
-	public String getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
 	}
 
 	public Cliente getCliente() {
@@ -45,9 +38,29 @@ public class Pedido {
 		return producto;
 	}
 
+	public void pagar() {
+        estado.pagar();
+    }
+
+    public void enviar() {
+        estado.enviar();
+    }
+
+    public void entregar() {
+        estado.entregar();
+    }
+
+    public void cancelar() {
+        estado.cancelar();
+    }
+
+    public void cambiarEstado(EstadoPedido nuevoEstado) {
+        this.estado = nuevoEstado;
+    }
+
 	@Override
 	public String toString() {
-		return "Pedido [numero=" + numero + ", fecha=" + fecha + ", cliente=" + cliente + ", producto=" + producto
+		return "Pedido [numero=" + numero + ", cliente=" + cliente + ", producto=" + producto
 				+ "]";
 	}
 }
