@@ -10136,7 +10136,7 @@
 									"parentStyle": true,
 									"left": 352,
 									"top": 16,
-									"width": 10,
+									"width": 73.2353515625,
 									"height": 10
 								},
 								{
@@ -10167,6 +10167,25 @@
 											"height": 13,
 											"text": "+RegistrarEnCarrito()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGW2xckH91/TmA=",
+											"_parent": {
+												"$ref": "AAAAAAGW0H9NZXBZ5FM="
+											},
+											"model": {
+												"$ref": "AAAAAAGW2xcj+N1nulI="
+											},
+											"fillColor": "#FF952B",
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 181,
+											"top": 394,
+											"width": 124.8935546875,
+											"height": 13,
+											"text": "+notificarCliente()",
+											"horizontalAlignment": 0
 										}
 									],
 									"fillColor": "#FF952B",
@@ -10175,7 +10194,7 @@
 									"left": 176,
 									"top": 374,
 									"width": 134.8935546875,
-									"height": 23
+									"height": 38
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -10224,7 +10243,7 @@
 							"left": 176,
 							"top": 336,
 							"width": 133.8935546875,
-							"height": 61,
+							"height": 76,
 							"nameCompartment": {
 								"$ref": "AAAAAAGW0H9NZHBT9wU="
 							},
@@ -15354,7 +15373,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 233,
-									"top": 427,
+									"top": 435,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -15376,7 +15395,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 218,
-									"top": 427,
+									"top": 435,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -15398,7 +15417,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 262,
-									"top": 428,
+									"top": 436,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -15416,7 +15435,7 @@
 							"tail": {
 								"$ref": "AAAAAAGW1u6IwmDolUE="
 							},
-							"points": "248:472;248:397",
+							"points": "248:472;248:412",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGW1vkU2uAK2Yk="
@@ -16780,6 +16799,14 @@
 												"$ref": "AAAAAAGW0H9NY3BQr88="
 											},
 											"name": "RegistrarEnCarrito"
+										},
+										{
+											"_type": "UMLOperation",
+											"_id": "AAAAAAGW2xcj+N1nulI=",
+											"_parent": {
+												"$ref": "AAAAAAGW0H9NY3BQr88="
+											},
+											"name": "notificarCliente"
 										}
 									]
 								},
@@ -17376,7 +17403,8 @@
 											"_type": "UMLAttribute",
 											"_id": "AAAAAAGW1mCGUV+p2tg=",
 											"name": "pedido",
-											"visibility": "private"
+											"visibility": "private",
+											"type": ""
 										}
 									],
 									"operations": [
