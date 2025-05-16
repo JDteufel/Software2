@@ -32,71 +32,71 @@ public class ControladorCoR {
     @FXML
     private Rectangle valDescr, valPrecio, valTipo;
 
-private ManejadorProducto ValidarTipo;
-private ManejadorProducto ValidarPrecio;
-private ManejadorProducto ValidarDescripcion;
-private ManejadorProducto actualValidador;
-private Producto productoValidar;
+    private ManejadorProducto ValidarTipo;
+    private ManejadorProducto ValidarPrecio;
+    private ManejadorProducto ValidarDescripcion;
+    private ManejadorProducto actualValidador;
+    private Producto productoValidar;
 
     @FXML
     void bttAtras(ActionEvent event) {
         cambiarVista("FormularioInicio");
     }
 
-@FXML
-void bttCrear(ActionEvent event) {
+    @FXML
+    void bttCrear(ActionEvent event) {
 
-    valTipo.setFill(Color.LIGHTGRAY);
-    valPrecio.setFill(Color.LIGHTGRAY);
-    valDescr.setFill(Color.LIGHTGRAY);
+        valTipo.setFill(Color.LIGHTGRAY);
+        valPrecio.setFill(Color.LIGHTGRAY);
+        valDescr.setFill(Color.LIGHTGRAY);
 
-    String id = txtId.getText();
-    String tipo = selAlim.isSelected() ? "Alimenticio" : selElec.isSelected() ? "Electrico" : "";
-    String descripcion = txtDescr.getText();
-    double precio;
+        String id = txtId.getText();
+        String tipo = selAlim.isSelected() ? "Alimenticio" : selElec.isSelected() ? "Electrico" : "";
+        String descripcion = txtDescr.getText();
+        double precio;
 
-    try {
-        precio = Double.parseDouble(txtPrecio.getText());
-    } catch (NumberFormatException e) {
-        mostrarAlerta("Error", "Precio inválido");
-        return;
+        try {
+            precio = Double.parseDouble(txtPrecio.getText());
+        } catch (NumberFormatException e) {
+            mostrarAlerta("Error", "Precio inválido");
+            return;
+        }
+
+        if (tipo.isEmpty()) {
+            mostrarAlerta("Error", "Seleccione un tipo de producto");
+            return;
+        }
+
+        if (tipo.equals("Alimenticio")) {
+            productoValidar = new ProductoAlimenticio(id, tipo, descripcion, precio, "100cal");
+        } else {
+            productoValidar = new ProductoElectrico(id, tipo, descripcion, precio, "220v");
+        }
+
+        ValidarTipo = new ValidarTipo();
+        ValidarPrecio = new ValidarPrecio();
+        ValidarDescripcion = new ValidarDescripcion();
+
+        ValidarTipo.setSiguiente(ValidarPrecio);
+        ValidarPrecio.setSiguiente(ValidarDescripcion);
+
+        actualValidador = ValidarTipo;
+
+        mostrarAlerta("Paso a paso", "Producto creado. Presiona 'Siguiente' para validar.");
     }
 
-    if (tipo.isEmpty()) {
-        mostrarAlerta("Error", "Seleccione un tipo de producto");
-        return;
+    @FXML
+    public void initialize() {
+        ValidarTipo = new ValidarTipo();
+        ValidarPrecio = new ValidarPrecio();
+        ValidarDescripcion = new ValidarDescripcion();
+
+        ValidarTipo.setSiguiente(ValidarPrecio);
+        ValidarPrecio.setSiguiente(ValidarDescripcion);
     }
 
-    if (tipo.equals("Alimenticio")) {
-        productoValidar = new ProductoAlimenticio(id, tipo, descripcion, precio, "100cal");
-    } else {
-        productoValidar = new ProductoElectrico(id, tipo, descripcion, precio, "220v");
-    }
-
-    ValidarTipo = new ValidarTipo();
-    ValidarPrecio = new ValidarPrecio();
-    ValidarDescripcion = new ValidarDescripcion();
-
-    ValidarTipo.setSiguiente(ValidarPrecio);
-    ValidarPrecio.setSiguiente(ValidarDescripcion);
-
-    actualValidador = ValidarTipo;
-
-    mostrarAlerta("Paso a paso", "Producto creado. Presiona 'Siguiente' para validar.");
-}
-
-@FXML
-public void initialize() {
-    ValidarTipo = new ValidarTipo();
-    ValidarPrecio = new ValidarPrecio();
-    ValidarDescripcion = new ValidarDescripcion();
-
-    ValidarTipo.setSiguiente(ValidarPrecio);
-    ValidarPrecio.setSiguiente(ValidarDescripcion);
-}
-
-@FXML
-void bttSiguiente(ActionEvent event) {
+    @FXML
+    void bttSiguiente(ActionEvent event) {
     if (productoValidar == null || actualValidador == null) {
         txtValidar.setText("Primero crea un producto.");
         return;
@@ -126,10 +126,10 @@ void bttSiguiente(ActionEvent event) {
 
     if (actualValidador == null) {
         txtValidar.setText("Producto validado correctamente.");
-    } else {
-        txtValidar.setText("Validación exitosa en: " + nombreValidador + ". Presiona 'Siguiente'.");
+        } else {
+            txtValidar.setText("Validación exitosa en: " + nombreValidador + ". Presiona 'Siguiente'.");
+        }
     }
-}
 
     private void cambiarVista(String vista) {
         System.out.println("Intentando abrir la vista: " + vista);
@@ -142,12 +142,11 @@ void bttSiguiente(ActionEvent event) {
         }
     }
 
-   private void mostrarAlerta(String titulo, String mensaje) {
+    private void mostrarAlerta(String titulo, String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle(titulo);
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }
-
 }

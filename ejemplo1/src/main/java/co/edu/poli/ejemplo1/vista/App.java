@@ -16,7 +16,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
         cambiarVista("FormularioInicio");
-        primaryStage.setTitle("Actividad 11");
+        primaryStage.setTitle("Actividades 11 | 12");
         primaryStage.show();
     }
 

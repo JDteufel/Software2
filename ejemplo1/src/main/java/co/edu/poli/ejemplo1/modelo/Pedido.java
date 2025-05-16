@@ -8,9 +8,17 @@ public class Pedido {
     private String cliente;
     private List<Producto> producto;
     private EstadoPedido estado;
+    private Mediator mediator;
 
     public Pedido() {
         producto = new ArrayList<>();
+    }
+
+    public Pedido(String numero, String cliente, List<Producto> producto, Mediator mediator) {
+        this.numero = numero;
+        this.cliente = cliente;
+        this.producto = producto;
+        this.mediator = mediator;
     }
 
     public String getNumero() {
@@ -33,7 +41,7 @@ public class Pedido {
         return producto;
     }
 
-    public void setProductos(List<Producto> productos) {
+    public void setProductos(List<Producto> producto) {
         this.producto = producto;
     }
 
@@ -43,6 +51,14 @@ public class Pedido {
 
     public void cambiarEstado(EstadoPedido nuevoEstado) {
         this.estado = nuevoEstado;
+    }
+
+    public Mediator getMediator() {
+        return mediator;
+    }
+
+    public void setMediator(Mediator mediator) {
+        this.mediator = mediator;
     }
 
     public void pagar() {
