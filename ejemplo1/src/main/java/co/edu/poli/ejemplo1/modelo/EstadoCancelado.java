@@ -8,18 +8,18 @@ public class EstadoCancelado implements EstadoPedido {
     }
 
     public void pagar() {
-        System.out.println("El pedido está cancelado. No se puede pagar.");
+       
     }
 
     public void enviar() {
-        System.out.println("El pedido está cancelado. No se puede enviar.");
+        
     }
 
     public void entregar() {
-        System.out.println("El pedido está cancelado. No se puede entregar.");
+        
     }
 
     public void cancelar() {
-        System.out.println("El pedido ya está cancelado.");
+        
     }
 }

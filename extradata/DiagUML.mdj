@@ -18033,6 +18033,77 @@
 							]
 						}
 					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAGW1l/cTFz36qg=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "EstadoEnviado",
+					"ownedElements": [
+						{
+							"_type": "UMLInterfaceRealization",
+							"_id": "AAAAAAGW1mh1E3eU1oM=",
+							"_parent": {
+								"$ref": "AAAAAAGW1l/cTFz36qg="
+							},
+							"source": {
+								"$ref": "AAAAAAGW1l/cTFz36qg="
+							},
+							"target": {
+								"$ref": "AAAAAAGW1kG7h51RfC8="
+							}
+						}
+					],
+					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGW1mCGUV+p2tg=",
+							"_parent": {
+								"$ref": "AAAAAAGW1l/cTFz36qg="
+							},
+							"name": "pedido",
+							"visibility": "private",
+							"type": {
+								"$ref": "AAAAAAGVD50FJ2vB3rM="
+							}
+						}
+					],
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGW1mDSaWXj7d0=",
+							"_parent": {
+								"$ref": "AAAAAAGW1l/cTFz36qg="
+							},
+							"name": "pagar"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGW1mEF6Wdq5ds=",
+							"_parent": {
+								"$ref": "AAAAAAGW1l/cTFz36qg="
+							},
+							"name": "enviar"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGW1mEguWjxUv4=",
+							"_parent": {
+								"$ref": "AAAAAAGW1l/cTFz36qg="
+							},
+							"name": "entregar"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGW1mFA0Wp4pe4=",
+							"_parent": {
+								"$ref": "AAAAAAGW1l/cTFz36qg="
+							},
+							"name": "cancelar"
+						}
+					]
 				}
 			]
 		}
