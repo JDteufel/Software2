@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo1.controlador.ControladorState">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.ejemplo1.controlador.ControladorState">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c9c9c9" height="400.0" stroke="BLACK" strokeType="INSIDE" width="248.0" />
-      <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero de pedido:" />
-      <Text layoutX="14.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente:" />
-      <Text layoutX="14.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos:" />
-      <Button fx:id="bttCrear" layoutX="80.0" layoutY="325.0" mnemonicParsing="false" onAction="#bttCrear" text="Crear Pedido">
+      <Text layoutX="15.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número de pedido:" />
+      <TextField fx:id="txtId" layoutX="15.0" layoutY="72.0" promptText="..." />
+      <Button fx:id="bttBuscar" layoutX="186.0" layoutY="72.0" mnemonicParsing="false" onAction="#bttBuscar" text="OK">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="txtPedido" layoutX="14.0" layoutY="49.0" promptText="..." />
-      <TextField fx:id="txtCliente" layoutX="14.0" layoutY="123.0" promptText="..." />
-      <TextField fx:id="txtProduc" layoutX="14.0" layoutY="194.0" promptText="..." />
-      <Button fx:id="bttAdd" layoutX="169.0" layoutY="194.0" mnemonicParsing="false" onAction="#bttAdd" text="OK">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <ListView fx:id="listProduc" layoutX="14.0" layoutY="225.0" prefHeight="93.0" prefWidth="219.0" />
+      <ListView fx:id="listPedidos" layoutX="14.0" layoutY="106.0" prefHeight="237.0" prefWidth="219.0" />
+      <Label layoutX="273.0" layoutY="9.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Gestión de Estado del Pedido" />
+      <HBox alignment="CENTER_LEFT" layoutX="273.0" layoutY="52.0" spacing="10">
+         <children>
+            <Label style="-fx-font-size: 14px;" text="Estado actual:" />
+            <Label fx:id="lblEstado" style="-fx-font-size: 14px; -fx-text-fill: #1976D2;" text="Nuevo" />
+         </children>
+      </HBox>
+      <Button fx:id="bttPagar" layoutX="273.0" layoutY="94.0" onAction="#bttPagar" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="💳 Pagar" />
+      <Button fx:id="bttEnviar" layoutX="355.0" layoutY="94.0" onAction="#bttEnviar" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="📦 Enviar" />
+      <Button fx:id="bttEntregar" layoutX="444.0" layoutY="94.0" onAction="#bttEntregar" style="-fx-background-color: #FFC107; -fx-text-fill: black;" text="📬 Entregar" />
+      <Button fx:id="bttCancelar" layoutX="540.0" layoutY="94.0" onAction="#bttCancelar" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="❌ Cancelar" />
+      <Label layoutX="275.0" layoutY="160.0" style="-fx-font-weight: bold;" text="Historial de acciones:" />
+      <ListView fx:id="listAction" layoutX="275.0" layoutY="185.0" prefHeight="154.0" prefWidth="351.0" />
+      <Button fx:id="bttInicio" layoutX="15.0" layoutY="354.0" mnemonicParsing="false" onAction="#bttInicio" text="Atras" />
+      <Line endX="313.0" layoutX="376.0" layoutY="136.0" startX="-128.0" />
+      <Label layoutX="15.0" layoutY="9.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Buscar Pedidos:" />
    </children>
 </AnchorPane>

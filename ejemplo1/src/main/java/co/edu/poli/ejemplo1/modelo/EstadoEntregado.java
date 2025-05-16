@@ -8,18 +8,18 @@ public class EstadoEntregado implements EstadoPedido {
     }
 
     public void pagar() {
-        System.out.println("El pedido ya fue pagado y entregado.");
+        
     }
 
     public void enviar() {
-        System.out.println("El pedido ya fue enviado y entregado.");
+        
     }
 
     public void entregar() {
-        System.out.println("El pedido ya fue entregado.");
+        
     }
 
     public void cancelar() {
-        System.out.println("No se puede cancelar un pedido entregado.");
+        
     }
 }

@@ -4,41 +4,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-	private String numero;
-	private Cliente cliente;
-	private List<Producto> producto;
-	private EstadoPedido estado;
+    private String numero;
+    private String cliente;
+    private List<Producto> producto;
+    private EstadoPedido estado;
 
-	public Pedido() {
-		producto = new ArrayList<>();
-		this.estado = new EstadoNuevo(this);
-	}
+    public Pedido() {
+        producto = new ArrayList<>();
+    }
 
-	public String getNumero() {
-		return numero;
-	}
+    public String getNumero() {
+        return numero;
+    }
 
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 
-	public Cliente getCliente() {
-		return cliente;
-	}
+    public String getCliente() {
+        return cliente;
+    }
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
 
-	public void setProducto(List<Producto> producto) {
-		this.producto = producto;
-	}
+    public List<Producto> getProducto() {
+        return producto;
+    }
 
-	public List<Producto> getProducto() {
-		return producto;
-	}
+    public void setProductos(List<Producto> productos) {
+        this.producto = producto;
+    }
 
-	public void pagar() {
+    public EstadoPedido getEstado() {
+        return estado;
+    }
+
+    public void cambiarEstado(EstadoPedido nuevoEstado) {
+        this.estado = nuevoEstado;
+    }
+
+    public void pagar() {
         estado.pagar();
     }
 
@@ -54,13 +61,8 @@ public class Pedido {
         estado.cancelar();
     }
 
-    public void cambiarEstado(EstadoPedido nuevoEstado) {
-        this.estado = nuevoEstado;
+    @Override
+    public String toString() {
+        return "Pedido [numero=" + numero + ", cliente=" + cliente + ", productos=" + producto + "]";
     }
-
-	@Override
-	public String toString() {
-		return "Pedido [numero=" + numero + ", cliente=" + cliente + ", producto=" + producto
-				+ "]";
-	}
 }

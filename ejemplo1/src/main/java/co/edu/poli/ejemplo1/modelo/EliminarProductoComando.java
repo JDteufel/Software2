@@ -11,7 +11,7 @@ public class EliminarProductoComando implements Comando {
 
     @Override
     public void ejecutar() {
-        pedido.getProducto().remove(producto);
+        //pedido.getProducto().remove(producto);
         System.out.println("Producto eliminado: " + producto);
     }
 }
