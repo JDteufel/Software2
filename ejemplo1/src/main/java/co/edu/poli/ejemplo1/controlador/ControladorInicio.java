@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 public class ControladorInicio {
 
     @FXML
-    private Button bttCoR, bttStrat, bttComm, bttVisi, bttState;
+    private Button bttCoR, bttStrat, bttComm, bttVisi, bttState, bttMediator;
 
     private void cambiarVista(String vista) {
         System.out.println("Intentando abrir la vista: " + vista);
@@ -53,6 +53,11 @@ public class ControladorInicio {
     @FXML
     void bttState(ActionEvent event) {
         cambiarVista("FormularioState");
+    }
+
+    @FXML
+    void bttMediator(ActionEvent event) {
+        cambiarVista("FormularioMediator");
     }
 
 }
